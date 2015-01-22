@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="small-12 columns">
+		<h1>Here's All of the Available Books for Sale</h1>	
+	</div>	
+
+	<div class="small-4 small-centered columns">
+		<table>
+			<thead>
+		    <tr>
+		      <th>ISBN</th>
+		      <th>Quantity</th>
+		    </tr>
+		  </thead>
+
+			<!-- Loops through each book and displays them -->
+			<% @books.each do |book| %>
+				<tbody>
+					<tr>
+						<td><%= book.isbn %></td>
+						<td><%= book.quantity%></td>
+					</tr>
+				</tbody>
+			<% end %>
+		</table>
+	</div>
+</div>

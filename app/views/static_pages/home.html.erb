@@ -1,2 +1,9 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="row">
+	<div class="small-8 small-centered columns">
+		<h1>Welcome to the Book Store!</h1>
+		<p>To see all of the available books please click the link below.</p>
+
+		<!-- When going from one controller to the other you need to specify the controller name -->
+		<%= link_to 'Books', controller: 'books' %>
+	</div>
+</div>
