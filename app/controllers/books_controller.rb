@@ -9,41 +9,60 @@ class BooksController < ApplicationController
 	end
 
 	def new 
-		@book = Book.new
+		if logged_in?
+			@book = Book.new
+		else 
+			redirect_to books_path
+		end
 	end
 
 	def edit 
-		@book = Book.find(params[:id])
+		if logged_in?
+			@book = Book.find(params[:id])
+		else
+			redirect_to books_path
+		end
 	end
 
 	def create 
-		@book = Book.new(book_params)
+		if logged_in?
+			@book = Book.new(book_params)
 
-		if @book.save
-			redirect_to @book
+			if @book.save
+				redirect_to @book
+			else
+				render 'new'
+			end
 		else
-			render 'new'
+			redirect_to books_path
 		end
 	end
 
 	def update
-		@book = Book.find(params[:id])
+		if logged_in?
+			@book = Book.find(params[:id])
 
-		# Using private book_params method
-		if @book.update(book_params)
-			redirect_to @book
+			# Using private book_params method
+			if @book.update(book_params)
+				redirect_to @book
+			else
+				render 'edit'
+			end
 		else
-			render 'edit'
+			redirect_to books_path
 		end
 	end
 
 	def destroy 
-		# Want to add a check here to make sure the user is an admin
-		@book = Book.find(params[:id])
-		@book.destroy
+		if logged_in?
+			@book = Book.find(params[:id])
+			@book.destroy
 
-		# Would like to post a successful delete message
-		redirect_to books_path
+			# Would like to post a successful delete message
+			redirect_to books_path
+		else
+			redirect_to books_path
+		end
 	end
 
 	# Everything below this is a private method

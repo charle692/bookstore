@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
   # Creates a REST resource for books
   resources :books
   root 'static_pages#home'
