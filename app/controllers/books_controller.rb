@@ -9,12 +9,21 @@ class BooksController < ApplicationController
 	end
 
 	def new 
+		@book = Book.new
+	end
+
+	def edit 
+		@book = Book.find(params[:id])
 	end
 
 	def create 
 		@book = Book.new(book_params)
-		@book.save
-		redirect_to @book
+
+		if @book.save
+			redirect_to @book
+		else
+			render 'new'
+		end
 	end
 
 	# Everything below this is a private method
