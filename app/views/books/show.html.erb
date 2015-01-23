@@ -13,11 +13,9 @@
 			<strong>Quantity Available:</strong>
 			<%= @book.quantity %>
 		</p>
-
-		<%= link_to 'Back to all books', books_path %>
+		
 		<% if logged_in? %>
 			<%= link_to 'Edit Book', edit_book_path(@book) %>
-			<%= link_to "Log out", logout_path, method: "delete" %>
 		<% end %>
 	</div>
 </div>

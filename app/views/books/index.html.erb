@@ -34,9 +34,5 @@
 				</tbody>
 			<% end %>
 		</table>
-	<% if logged_in? %>
-		<%= link_to 'Add a new book', new_book_path %>
-		<%= link_to "Log out", logout_path, method: "delete" %>
-	<% end %>
 	</div>
 </div>
