@@ -9,6 +9,10 @@
 		    <tr>
 		      <th>ISBN</th>
 		      <th>Quantity</th>
+		      <th>View Book</th>
+		      <!-- Only want the next two to be available to admins -->
+		      <th>Edit Book</th>
+		      <td>Delete Book</td>
 		    </tr>
 		  </thead>
 
@@ -18,6 +22,11 @@
 					<tr>
 						<td><%= book.isbn %></td>
 						<td><%= book.quantity%></td>
+						<td><%= link_to 'Show Book', book_path(book) %></td> <!-- Displays this current instance of the book -->
+
+						<!-- Only want these two to be available for admin view  -->
+						<td><%= link_to 'Edit Book', edit_book_path(book) %></td> <!-- Brings you to the edit view for this book instance -->
+						<td><%= link_to 'Delete Book', book_path(book), method: :delete, data: {confirm: 'Are you sure you want to delete this book?'} %></td>
 					</tr>
 				</tbody>
 			<% end %>

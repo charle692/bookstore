@@ -1,38 +1,7 @@
 `<div class="row">
 	<div class="small-12 columns">
 		<h1 class="text-center">Add a Book to the Store</h1>
-
-		<!-- Form for adding more books to the store -->
-		<%= form_for :book, url: books_path do |b| %>
-
-			<% if @book.errors.any? %> 
-				<div id="error_explanation">
-					<h2><%= pluralize(@book.errors.count, "error") %> prohibited the article from being saved.</h2>
-
-					<ul>
-						<%= @book.errors.full_messages.each do |e| %> 
-							<li><% e %></li>
-						<% end %>
-					</ul>
-				</div>
-			<% end %> 
-
-			<!-- Currently the only thing that will need to be added -->
-			<!-- The metadata will be downloaded and stored based on the isbn -->
-			<p>
-				<%= b.label :isbn %>
-				<%= b.text_field :isbn %>
-			</p>
-
-			<p>
-				<%= b.label :quantity %>
-				<%= b.text_field :quantity %>
-			</p>
-
-			<p>
-				<%= b.submit class: 'button expand' %>
-			</p>
-		<% end %>
-	<%= link_to 'Back to all books', books_path %>
+		<%= render 'form' %> <!-- Renders the input form for books -->
+		<%= link_to 'Back to all books', books_path %>
 	</div>
 </div>
