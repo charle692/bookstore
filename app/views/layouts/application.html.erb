@@ -13,7 +13,9 @@
 
   <body>
     <%= render "static_pages/header" %>
-    <%= yield %>
+    <div class="home_container">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
