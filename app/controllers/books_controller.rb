@@ -28,10 +28,16 @@ class BooksController < ApplicationController
 		if logged_in?
 			@book = Book.new(book_params)
 
-			if @book.save
-				redirect_to @book
+			# Checks to see if a book exists yet or not
+			if book2 = Book.find_by_isbn(@book.isbn)
+				book2.update_attribute("quantity", book2.quantity + @book.quantity)
+				redirect_to book2
 			else
-				render 'new'
+				if @book.save
+					redirect_to @book
+				else
+					render 'new'
+				end
 			end
 		else
 			redirect_to books_path
@@ -42,7 +48,6 @@ class BooksController < ApplicationController
 		if logged_in?
 			@book = Book.find(params[:id])
 
-			# Using private book_params method
 			if @book.update(book_params)
 				redirect_to @book
 			else
