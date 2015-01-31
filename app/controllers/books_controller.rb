@@ -33,6 +33,7 @@ class BooksController < ApplicationController
 				book2.update_attribute("quantity", book2.quantity + @book.quantity)
 				redirect_to book2
 			else
+				get_book_cover @book.isbn
 				if @book.save
 					redirect_to @book
 				else
@@ -74,5 +75,11 @@ class BooksController < ApplicationController
 	private 
 	def book_params 
 		params.require(:book).permit(:isbn, :quantity)
+	end
+
+	def get_book_cover (isbn)
+		File.open("/home/ryan/Dev/Rails_Development/bookstore/public/BookCovers/#{isbn}.jpg", "wb") do |f|
+			f.write(open("http://covers.librarything.com/devkey/KEY/medium/isbn/#{isbn}").read)
+		end
 	end
 end
