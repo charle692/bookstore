@@ -4,6 +4,9 @@
 	</div>
 
 	<div class="medium-4 medium-push-1 medium-centered columns">
+		
+		<%= image_tag "#{@book.isbn}.jpg", alt: 'Book Cover' %>
+
 		<p>
 			<strong>ISBN:</strong>
 			<%= @book.isbn %>

@@ -78,7 +78,7 @@ class BooksController < ApplicationController
 	end
 
 	def get_book_cover (isbn)
-		File.open("/home/ryan/Dev/Rails_Development/bookstore/public/BookCovers/#{isbn}.jpg", "wb") do |f|
+		File.open("/home/ryan/Dev/Rails_Development/bookstore/app/assets/images/#{isbn}.jpg", "wb") do |f|
 			f.write(open("http://covers.librarything.com/devkey/KEY/medium/isbn/#{isbn}").read)
 		end
 	end
