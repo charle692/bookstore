@@ -19,6 +19,7 @@
 		
 		<% if logged_in? %>
 			<%= link_to 'Edit Book', edit_book_path(@book) %>
+			<%= link_to 'Delete Book', book_path(@book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>
 		<% end %>
 	</div>
 </div>
