@@ -81,29 +81,10 @@ class BooksController < ApplicationController
 
 	def save_book(book)
 		get_book_cover book.isbn
-		get_book_info book
-		if get_book_info(book).save
+		if book.save
 			redirect_to book
 		else
 			render 'new'
 		end
-	end
-
-	# Gets book information 
-	def get_book_info(book) 
-		# This does not return anything right now
-		results = ISBNdb::Query.find(:collection => 'books', :where => { :isbn => format_isbn(book.isbn) })
-		p "results : #{results}"
-
-		results.each do |result| 
-			puts "title: #{result.title}"
-			book.assign_attributes(title: "#{result.title}", author: "#{result.authors_text}", summary: "#{result.book_summary}", publisher: "#{result.publisher_name}")
-		end
-
-		return book
-	end
-
-	def format_isbn (isbn) 
-		formatted_isbn = "978-#{isbn[0]}-#{isbn[1..4]}-#{isbn[5..8]}-#{isbn[9]}"
 	end
 end
