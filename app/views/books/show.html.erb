@@ -8,7 +8,23 @@
 		<%= image_tag "#{@book.isbn}.jpg", alt: 'Book Cover' %>
 
 		<p>
-			<strong>ISBN:</strong>
+			<strong>Title:</strong>
+			<%= @book.title %>
+		</p>
+
+		<p>
+			Author:
+			<%= @book.author %>	
+		</p>
+
+		<p>
+			Publisher: 
+			<%= @book.publisher %>
+		</p>
+
+
+		<p>
+			ISBN:
 			<%= @book.isbn %>
 		</p>
 
@@ -17,6 +33,11 @@
 			<%= @book.quantity %>
 		</p>
 		
+		<p>
+			Summary:
+			<%= @book.summary %>
+		</p>
+
 		<% if logged_in? %>
 			<%= link_to 'Edit Book', edit_book_path(@book) %>
 			<%= link_to 'Delete Book', book_path(@book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>

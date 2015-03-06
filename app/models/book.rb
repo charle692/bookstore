@@ -1,6 +1,6 @@
 class Book < ActiveRecord::Base
 	# Makes sure that both an isbn and quantity are entered
-	validates :isbn, :quantity, presence: true 
+	validates :isbn, :quantity, :title, :author, presence: true 
 	validate :isbn_length
 
 	private 
