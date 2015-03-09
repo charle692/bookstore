@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   # Creates a REST resource for books
   resources :books
-  root 'static_pages#home'
+  root 'books#index'
 end
