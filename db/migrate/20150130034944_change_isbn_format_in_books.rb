@@ -1,5 +1,5 @@
 class ChangeIsbnFormatInBooks < ActiveRecord::Migration
   def change
-  	change_column :books, :isbn, :string
+    change_column :books, :isbn, :string
   end
 end

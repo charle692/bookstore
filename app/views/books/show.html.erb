@@ -1,30 +1,27 @@
 <div class="row">
-	<div class="medium-6 medium-centered columns">
-		<h1 class="text-center">Show Selected Book</h1>
+
+	<div class="medium-12 columns">
+		<h1 id="book_title" class="text-center"><%= @book.title %></h1>
 	</div>
 
-	<div class="medium-4 medium-push-1 medium-centered columns">
-		
+	<div class="medium-3 medium-push-4 columns">
 		<%= image_tag "#{@book.isbn}.jpg", alt: 'Book Cover' %>
+	</div>
+
+	<div class="medium-4 medium-pull-2 columns">
 
 		<p>
-			<strong>Title:</strong>
-			<%= @book.title %>
-		</p>
-
-		<p>
-			Author:
+			<strong>Author:</strong>
 			<%= @book.author %>	
 		</p>
 
 		<p>
-			Publisher: 
+			<strong>Publisher:</strong> 
 			<%= @book.publisher %>
 		</p>
 
-
 		<p>
-			ISBN:
+			<strong>ISBN:</strong>
 			<%= @book.isbn %>
 		</p>
 
@@ -32,9 +29,13 @@
 			<strong>Quantity Available:</strong>
 			<%= @book.quantity %>
 		</p>
-		
+	</div>
+</div>
+
+<div class="row">	
+	<div class="medium-">	
 		<p>
-			Summary:
+			<strong>Summary:</strong>
 			<%= @book.summary %>
 		</p>
 
