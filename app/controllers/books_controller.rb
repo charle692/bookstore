@@ -1,6 +1,15 @@
 class BooksController < ApplicationController
 	def index  
-		@books = Book.all
+		@categories = {}
+		books = Book.all
+
+		books.each do |book|
+			unless @categories.has_key? book.category do
+				@categories[book.category] = []
+			end
+
+			@categories[book.category].add(book)
+		end
 	end
 
 	def show 
