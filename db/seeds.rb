@@ -4,6 +4,7 @@ Book.new(
   title: 'The Western Canon: The Books and School of the Ages',
   author: 'Harold Bloom',
   publisher: 'Houghton Mifflin Harcourt',
+  category: 'History',
   summary: 'Harold Bloom explores our Western
    literary tradition by concentrating on the works of twenty-six authors
     central to the Canon. He argues against ideology in literary criticism;
@@ -31,6 +32,7 @@ Book.new(
   title: 'The Chicago Manual of Style',
   author: 'University of Chicago Press Staff',
   publisher: 'University of Chicago Press',
+  category: 'Education',
   summary: 'Those who work with words know how
    dramatically publishing has changed in the past decade, with technology now
     informing and influencing every stage of the writing and publishing
@@ -79,6 +81,7 @@ Book.new(
   title: 'Star Wards: Return of the Jedi',
   author: 'Goerge Lucas',
   publisher: 'LucasBooks',
+  category: 'Science Fiction',
   summary: 'It was a
   dark time for the rebel alliance...Han Solo, frozen in carbonite, had been
    delivered into the hands of the vile gangster Jabba the Hutt. Determined to
@@ -95,6 +98,7 @@ Book.new(
   title: 'Star Wars: A New Hope',
   author: 'George Lucas',
   publisher: 'LucasBooks',
+  category: 'Science Fiction',
   summary: 'Luke Skywalker was a twenty-year-old who lived and worked on his
    uncle\'s farm on the remote planet of Tatooine...and he was bored beyond
     belief. He yearned for adventures that would take him beyond the farthest
@@ -105,6 +109,7 @@ Book.new(
   quantity: '2',
   title: 'Harry Potter and the Prisoner of Azkaban',
   author: 'J.K. Rowling',
+  category: 'Fiction',
   publisher: 'Scholastic',
   summary: 'For twelve long years, the dread fortress of Azkaban held an
    infamous prisoner named Sirius Black. Convicted of killing thirteen people
@@ -140,6 +145,7 @@ Book.new(
   title: 'Harry Potter and the Goblet of Fire',
   author: 'J.K. Rowling',
   publisher: 'Scholastic',
+  category: 'Fiction',
   summary: 'In Harry
   Potter and the Goblet of Fire, Harry is midway through both his training as a
    wizard and his coming of age. He wants to get away from the malicious
@@ -173,6 +179,7 @@ Book.new(
   title: 'Harry Potter and the Order of the Phoenix',
   author: 'J.K. Rowling',
   publisher: 'Scholastic',
+  category: 'Fiction',
   summary: 'In
   Harry Potter and the Order of the Phoenix, Lord Voldemort has returned to the
    Wizarding world, presenting a threat that neither the magical government nor
@@ -207,6 +214,7 @@ Book.new(
   title: 'Harry Potter and the Chamber of Secrets',
   author: 'J.K. Rowling',
   publisher: 'Scholastic',
+  category: 'Fiction',
   summary: 'In Harry Potter and the Chamber of Secrets, the summer after
    Harry\'s first year at Hogwarts has been his worst summer ever… the Dursleys
     more distant and horrible than ever before. But just as he\'s packing his
@@ -239,6 +247,7 @@ Book.new(
   title: 'Harry Potter and the Half-Blood Prince',
   author: 'J.K. Rowling',
   publisher: 'Scholastic',
+  category: 'Fiction',
   summary: 'When Harry Potter and the Half-Blood Prince opens, the war against
     Voldemort has begun. The Wizarding world has split down the middle, and as
      the casualties mount, the effects even spill over onto the Muggles.
@@ -274,6 +283,7 @@ Book.new(
   title: 'Holes',
   author: 'Louis Sachar',
   publisher: 'Yearling',
+  category: 'Fiction',
   summary: 'Stanley Yelnats is under a curse. A curse that began with his
         no-good-dirty-rotten-pig-stealing-great-great-grandfather and has since
          followed generations of Yelnatses. Now Stanley has been unjustly sent
@@ -294,6 +304,7 @@ Book.new(
   title: 'The Tales of Beedle the Bard',
   author: 'J.K. Rowling',
   publisher: 'Pottermore',
+  category: 'Fiction',
   summary: 'THE TALES OF BEEDLE THE BARD, a Wizarding classic, first came to
    Muggle readers\' attention in the book known as HARRY POTTER
     AND THE DEATHLY HALLOWS. Now, thanks to Hermione Granger\'s new translation
@@ -313,6 +324,7 @@ Book.new(
   title: 'Lord of the Rings - The Two Towers',
   author: 'J.R.R. Tolkien',
   publisher: 'Mariner Books',
+  category: 'Fiction',
   summary: 'Frodo and his Companions of the Ring have been beset by danger
    during their quest to prevent the Ruling Ring from falling into the hands of
     the Dark Lord by destroying it in the Cracks of Doom. They have lost the
@@ -329,6 +341,7 @@ Book.new(
   title: 'Lord of the Rings - Fellowship of the Ring',
   author: 'J.R.R. Tolkien',
   publisher: 'Recorded Books',
+  category: 'Fiction',
   summary: 'Frodo Baggins and his companion Sam Gamgee, set off along thesame
    road down which Bilbo the Hobbit had accompanied Thorin Oakenshield and
     his dwarves all those years ago. Much danger and many strange encounters
@@ -340,6 +353,7 @@ Book.new(
   title: 'The Lord of the Rings',
   author: 'J.R.R. Tolkien',
   publisher: 'Houghton Mifflin',
+  category: 'Fiction',
   summary: 'One Ring to rule them all, One Ring to find them, One Ring to bring
   them all and in the darkness bind them. In ancient times the Rings of Power
    were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One
@@ -366,6 +380,7 @@ Book.new(
   title: 'Great Books',
   author: 'David Denby',
   publisher: 'Simon & Schuster',
+  category: 'Fiction',
   summary: 'At the age of forty-eight, writer and film critic David Denby
    returned to Columbia University and re-enrolled in two core courses in
     Western civilization to confront the literary and philosophical
