@@ -75,10 +75,10 @@ class BooksController < ApplicationController
 		end
 	end
 
-	# Everything below this is a private method
 	private 
+	
 	def book_params 
-		params.require(:book).permit(:isbn, :quantity, :title, :author, :summary, :publisher)
+		params.require(:book).permit(:isbn, :quantity, :title, :author, :summary, :publisher, :category)
 	end
 
 	# Gets book cover page

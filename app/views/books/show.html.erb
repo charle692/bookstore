@@ -1,7 +1,7 @@
 <div class="row">
 
 	<div class="medium-12 columns">
-		<h1 id="book_title" class="text-center"><%= @book.title %></h1>
+		<h1 id="title" class="text-center"><%= @book.title %></h1>
 	</div>
 
 	<div class="medium-3 medium-push-4 columns">
@@ -18,6 +18,11 @@
 		<p>
 			<strong>Publisher:</strong> 
 			<%= @book.publisher %>
+		</p>
+
+		<p>
+			<strong>Category:</strong>
+			<%= @book.category %>
 		</p>
 
 		<p>
