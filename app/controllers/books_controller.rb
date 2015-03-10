@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-	before_action :require_login, except: [:index, :show]
+	before_action :deny_non_admins, except: [:index, :show]
 
 	def index  
 		@books = Book.all
@@ -49,11 +49,11 @@ class BooksController < ApplicationController
 
 	private 
 
-	def require_login
-		if !logged_in?
+	def deny_non_admins
+		if !current_user || !current_user.is_role_by_name?('admin')
 			redirect_to root_path
 		end
-	end	
+	end
 
 	def book_params 
 		params.require(:book).permit(:isbn, :quantity, :title, :author, :summary, :publisher, :category)
