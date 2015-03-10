@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
 
+	before_action :deny_non_admins, except: [:index, :show]
+
 	def index  
 		@books = Book.all
 	end
@@ -46,6 +48,12 @@ class BooksController < ApplicationController
 	end
 
 	private 
+
+	def deny_non_admins
+		if !current_user || !current_user.is_role_by_name?('admin')
+			redirect_to root_path
+		end
+	end
 
 	def book_params 
 		params.require(:book).permit(:isbn, :quantity, :title, :author, :summary, :publisher, :category)
