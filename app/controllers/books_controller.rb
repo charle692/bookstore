@@ -1,7 +1,5 @@
 class BooksController < ApplicationController
 
-	before_action :require_login, except: [:index, :show]
-
 	def index  
 		@books = Book.all
 	end
@@ -48,12 +46,6 @@ class BooksController < ApplicationController
 	end
 
 	private 
-
-	def require_login
-		if !logged_in?
-			redirect_to root_path
-		end
-	end	
 
 	def book_params 
 		params.require(:book).permit(:isbn, :quantity, :title, :author, :summary, :publisher, :category)
