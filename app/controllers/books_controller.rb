@@ -1,9 +1,19 @@
 class BooksController < ApplicationController
+	helper :application
 
 	before_action :deny_non_admins, except: [:index, :show]
 
 	def index  
-		@books = Book.all
+		@categories = {}
+		books = Book.all
+
+		books.each do |book|
+			unless @categories.has_key? book.category 
+				@categories[book.category] = []
+			end
+
+			@categories[book.category].append(book)
+		end
 	end
 
 	def show 
