@@ -11,6 +11,7 @@ Book.sliderHandlers = {};
 Book.TRACK_PREFIX = "slider-";
 Book.ARROW_LEFT_PREFIX = "slider-left-arrow-";
 Book.ARROW_RIGHT_PREFIX = "slider-right-arrow-";
+Book.TRACK_START = -1000;
 
 Book.setup = function() {
   $(".slider-track").each(function() {
@@ -22,60 +23,133 @@ Book.setup = function() {
     var sliderHandler = new SliderHandler(this, leftSlider, rightSlider);
     Book.sliderHandlers[categoryName] = sliderHandler;
 
-    leftSlider.hover(
-      sliderHandler.startSlideRight(sliderHandler),
-      sliderHandler.stopSlideRight
-    );
+    sliderHandler.init();
 
-    rightSlider.hover(
-      sliderHandler.startSlideLeft(sliderHandler),
-      sliderHandler.stopSlideLeft
-    );
+    
+
+    
   });
 };
 
 //SliderHandler object (class)
 function SliderHandler(inTrack, inLeftArrow, inRightArrow) {
-  this.track = $(inTrack);
+  this.track = inTrack;
   this.leftArrow = inLeftArrow;
   this.rightArrow = inRightArrow;
   this.top;
   this.left;
-  this.isSlidingLeft = false;
-  this.isSlidingRight = false;
+  this.leftEnabled = false;
+  this.rightEnabled =  false;
   this.intervalId = null;
 }
 
 SliderHandler.prototype.init = function() {
-  var positions = track.position();
-  this.top = positions[top];
-  this.left = position[left];
+  var positions = $(this.track).position();
+  this.top = positions["top"];
+  this.left = positions["left"] + Book.TRACK_START;
+  $(this.track).css({left: this.left});
+  this.enableLeftSlide(this);
+  this.enableRightsSlide(this);
 }
 
-SliderHandler.prototype.slidingRight = function() {
-  //this.track.position({top: top, left: left += 5});
-  console.log("slidingRight");
+SliderHandler.prototype.slidingRight = function(handler) {
+  if(handler.rightEnabled) {
+    handler.showRightSlide(handler);
+
+    handler.left += 2;
+    $(handler.track).css({left: handler.left});
+
+    if(handler.left >= 0) {
+      handler.hideLeftSlide(handler);
+    }
+  }
 }
 
-SliderHandler.prototype.slidingLeft = function() {
-  //this.track.position({top: top, left: left -= 5});
-  console.log("slidingLeft");
+SliderHandler.prototype.slidingLeft = function(handler) {
+  if(handler.leftEnabled) {
+    handler.showLeftSlide(handler);
+
+    handler.left -= 2;
+    $(handler.track).css({left: handler.left});
+
+    if(handler.left <= -1780) {
+      handler.hideRightSlide(handler);
+    }
+  }
 }
 
 SliderHandler.prototype.startSlideLeft = function(handler) {
-  this.intervalId = setInterval(function(handler) {console.log(handler)}, 10);
+  handler.intervalId = setInterval(handler.slidingLeft, 10, handler);
 }
 
 SliderHandler.prototype.startSlideRight = function(handler) {
-  this.intervalId = setInterval(this.slidingRight, 10);
+  handler.intervalId = setInterval(handler.slidingRight, 10, handler);
 }
 
-SliderHandler.prototype.stopSlideLeft = function() {
-  clearInterval(this.intervalId);
+SliderHandler.prototype.stopSlideLeft = function(handler) {
+  clearInterval(handler.intervalId);
 }
 
-SliderHandler.prototype.stopSlideRight = function() {
-  clearInterval(this.intervalId);
+SliderHandler.prototype.stopSlideRight = function(handler) {
+  clearInterval(handler.intervalId);
+}
+
+SliderHandler.prototype.enableLeftSlide = function(handler) {
+  var arrow = $(handler.leftArrow);
+
+  arrow.show();
+
+  arrow.hover(
+    function() {
+      handler.startSlideRight(handler);
+    },
+    function() {
+      handler.stopSlideRight(handler);
+    }
+  );
+
+  handler.leftEnabled = true;
+}
+
+SliderHandler.prototype.enableRightsSlide = function(handler) {
+  var arrow = $(handler.rightArrow);
+
+  arrow.show();
+
+  arrow.hover(
+    function() {
+      handler.startSlideLeft(handler);
+    },
+    function() {
+      handler.stopSlideLeft(handler);
+    }
+  );
+
+  handler.rightEnabled = true;
+}
+
+SliderHandler.prototype.showLeftSlide = function(handler) {
+  var arrow = $(handler.leftArrow);
+  arrow.show();
+  handler.rightEnabled = true;
+}
+
+SliderHandler.prototype.showRightSlide = function(handler) {
+  var arrow = $(handler.rightArrow);
+  arrow.show();
+  handler.leftEnabled = true;
+}
+
+SliderHandler.prototype.hideLeftSlide = function(handler) {
+  var arrow = $(handler.leftArrow);
+  arrow.hide();
+  handler.rightEnabled = false;
+}
+
+SliderHandler.prototype.hideRightSlide = function(handler) {
+  var arrow = $(handler.rightArrow);
+  arrow.hide();
+  handler.leftEnabled = false;
 }
 
 //It starts this stuff up

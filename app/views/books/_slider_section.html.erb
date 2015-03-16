@@ -17,7 +17,7 @@
         <%= link_to image_tag("#{book.isbn}.jpg", alt: "#{book.title} Cover", 
           class: "book_cover"), book_path(book) %>
         
-        <% if logged_in? %>
+        <% if is_admin? %>
           <%= link_to image_tag('edit.png', class: 'table_icon', alt: 'Edit'), 
             edit_book_path(book) %>
           <%= link_to image_tag('delete.png', class: 'table_icon', alt: 'Delete'), 
