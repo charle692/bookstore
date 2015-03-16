@@ -14,7 +14,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 gem 'foundation-rails'
+
 gem 'rails_layout'
+
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -30,8 +33,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'rubocop', require: false
-
-gem 'guard-livereload',			group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,7 +1,16 @@
-.table_icon {
-	margin-left: 15px;
+#trash_icon {
 	height: 20px;
 	width: 20px;
+}
+
+#pencil_icon {
+	height: 20px;
+	width: 12px;
+}
+
+
+#pencil_icon, #trash_icon {
+	margin-left: 20px;
 }
 
 /* Index Page */

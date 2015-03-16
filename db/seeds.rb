@@ -1,4 +1,14 @@
 Book.all.delete_all
+User.all.each {|u| u.destroy}
+Role.all.each {|r| r.destroy}
+
+a = Role.new(:name => "admin")
+a.save
+
+au = User.new({:email => "admin@gmail.com", :password => "12345678", :password_confirmation => "12345678"} )
+au.save
+
+au.add_role(a)
 
 Book.new(
   isbn: '0151957479',

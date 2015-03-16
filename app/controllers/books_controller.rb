@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
 	helper :application
 
+	before_action :deny_non_admins, except: [:index, :show]
+
 	def index  
 		@categories = {}
 		books = Book.all
@@ -15,83 +17,66 @@ class BooksController < ApplicationController
 	end
 
 	def show 
-		# Passing id through the url
 		@book = Book.find(params[:id])
 	end
 
 	def new 
-		if logged_in?
-			@book = Book.new
-		else 
-			redirect_to books_path
-		end
+		@book = Book.new
 	end
 
 	def edit 
-		if logged_in?
-			@book = Book.find(params[:id])
-		else
-			redirect_to books_path
-		end
+		@book = Book.find params[:id]
 	end
 
 	def create 
-		if logged_in?
-			@book = Book.new(book_params)
+		@book = Book.new(book_params)
 
-			# Checks to see if a book exists yet or not
-			if book2 = Book.find_by_isbn(@book.isbn)
-				book2.update_attribute("quantity", book2.quantity + @book.quantity)
-				redirect_to book2
-			else
-				save_book(@book)
-			end
+		if book2 = Book.find_by(isbn: @book.isbn) 
+			book2.update_attribute "quantity", book2.quantity + @book.quantity
+			redirect_to book2
 		else
-			redirect_to books_path
+			get_book_cover @book.isbn
+			save_book @book
 		end
 	end
 
 	def update
-		if logged_in?
-			@book = Book.find(params[:id])
+		@book = Book.find params[:id]
 
-			if @book.update(book_params)
-				redirect_to @book
-			else
-				render 'edit'
-			end
+		if @book.update(book_params)
+			redirect_to @book
 		else
-			redirect_to books_path
+			render 'edit'
 		end
 	end
 
 	def destroy 
-		if logged_in?
-			@book = Book.find(params[:id])
-			@book.destroy
+		@book = Book.find params[:id]
+		@book.destroy
 
-			# Would like to post a successful delete message
-			redirect_to books_path
-		else
-			redirect_to books_path
-		end
+		redirect_to root_path
 	end
 
 	private 
-	
+
+	def deny_non_admins
+		if !current_user || !current_user.is_role_by_name?('admin')
+			redirect_to root_path
+		end
+	end
+
 	def book_params 
 		params.require(:book).permit(:isbn, :quantity, :title, :author, :summary, :publisher, :category)
 	end
 
 	# Gets book cover page
-	def get_book_cover (isbn)
+	def get_book_cover isbn
 		File.open("/home/ryan/Dev/Rails_Development/bookstore/app/assets/images/#{isbn}.jpg", "wb") do |f|
 			f.write(open("http://covers.librarything.com/devkey/KEY/medium/isbn/#{isbn}").read)
 		end
 	end
 
-	def save_book(book)
-		get_book_cover book.isbn
+	def save_book book
 		if book.save
 			redirect_to book
 		else

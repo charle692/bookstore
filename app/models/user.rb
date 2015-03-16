@@ -1,5 +1,27 @@
 class User < ActiveRecord::Base
-	validates :username, uniqueness: true, presence: true, length: { minimum: 6}
-	has_secure_password
-	validates :password, presence: true, length: { minimum: 8}
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  has_and_belongs_to_many :roles
+
+
+  def add_role(role) 
+    self.roles << role
+  end
+
+  def add_role_by_name(role_name)
+    role = Role.find_by(name: role_name)
+    self.roles << role
+  end 
+
+  def is_role?(role)
+    self.roles.include?(role)
+  end
+
+  def is_role_by_name?(role_name)
+    role = Role.find_by(name: role_name)
+    self.is_role?(role)
+  end
 end

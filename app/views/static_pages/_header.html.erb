@@ -12,13 +12,18 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li><%= link_to 'Help', help_path %></li>
-          <li><%= link_to 'Books', books_path %></li>
-          <% if logged_in? %>
-            <li><%= link_to 'Add a new Book', new_book_path %></li>
-            <li><%= link_to 'Logout', logout_path, method: "delete" %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Sign Out',
+                            destroy_user_session_path,
+                            data: {method: :delete} %></li>
+            <% if is_admin? %>
+              <li><%= link_to 'Add a new Book', new_book_path %></li>
+            <% end %>
+          <% else %>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
           <% end %>
-          <li></li>
+          <li><%= link_to 'Help', help_path %></li>
+          <li><%= link_to 'Cart ( 0 )', '#' %></li>
         </ul>
       </section>
     </nav>
