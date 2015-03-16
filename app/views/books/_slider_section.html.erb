@@ -1,0 +1,39 @@
+<h3><%= label %></h3>
+<div class="slider-container">
+
+  <div class="slider-arrow-container slider-left-arrow">
+    <%= image_tag "arrow-left-icon.png", 
+          id: "slider-left-arrow-#{sanitize_category(label)}", 
+          class: "slider-arrow" %>
+  </div>
+
+  <%= content_tag :div, id: "slider-#{sanitize_category(label)}", 
+    class: "slider-track" do %>
+
+    <% books.each do |book| %>
+
+      <div class="slider-item">
+      
+        <%= link_to image_tag("#{book.isbn}.jpg", alt: "#{book.title} Cover", 
+          class: "book_cover"), book_path(book) %>
+        
+        <% if is_admin? %>
+          <%= link_to image_tag('edit.png', class: 'table_icon', alt: 'Edit'), 
+            edit_book_path(book) %>
+          <%= link_to image_tag('delete.png', class: 'table_icon', alt: 'Delete'), 
+            book_path(book), method: :delete, data: 
+            { confirm: "Are you sure you want to delete this book?"} %>
+        <% end #ends logged in if %>
+
+      </div>
+
+    <% end #ends books.each %>
+
+  <% end #ends div slider track tag %> 
+
+  <div class="slider-arrow-container slider-right-arrow">
+    <%= image_tag "arrow-right-icon.png", 
+          id: "slider-right-arrow-#{sanitize_category(label)}", 
+          class: "slider-arrow" %>
+  </div>
+</div>

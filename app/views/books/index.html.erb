@@ -1,17 +1,14 @@
 <%= image_tag 'book_cover.jpg', id: 'book_cover', alt: 'Banner Photo of a book' %>
 <h1 id="header1">Welcome to the Bookstore!</h1>
 
-<div class="row">
-	<div class='small-block-grid-3 medium-block-grid-4 large-block-grid-6 columns'>
-		<% @books.each do |book| %>
-			<li>
-				<%= link_to image_tag("#{book.isbn}.jpg", alt: 'Book Cover', class: 'book_cover'), book_path(book) %>
-
-				<% if is_admin? %>
-					<%= link_to image_tag('pencil.png', id: 'pencil_icon', alt: 'Edit'), edit_book_path(book) %>
-					<%= link_to image_tag('trash.png', id: 'trash_icon', alt: 'Delete'), book_path(book), method: :delete, data: { confirm: "Are you sure you want to delete this book?"}%>
-				<% end %>
-			</li>
-		<% end %>
+<div class='row'>
+	<div class='small-12 small-centered columns'>
+		<h1 class='text-center'>Books for Sale</h1>
 	</div>
 </div>
+
+<% @categories.each do |label, books| %>
+	<div class="row">
+		<%= render partial: "slider_section", locals: {label: label, books: books} %>
+	</div>
+<% end %>
