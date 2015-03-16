@@ -1,31 +1,29 @@
-<div class="container"> 
-  <div class="row">
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1> <%= link_to 'Bookstore', root_path %></h1>
-        </li>
-         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
+<div class="row">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1> <%= link_to 'Bookstore', root_path %></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
 
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <% if user_signed_in? %>
-            <li><%= link_to 'Sign Out',
-                            destroy_user_session_path,
-                            data: {method: :delete} %></li>
-            <% if is_admin? %>
-              <li><%= link_to 'Add a new Book', new_book_path %></li>
-            <% end %>
-          <% else %>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <% if user_signed_in? %>
+          <li><%= link_to 'Sign Out',
+                          destroy_user_session_path,
+                          data: {method: :delete} %></li>
+          <% if is_admin? %>
+            <li><%= link_to 'Add a new Book', new_book_path %></li>
           <% end %>
-          <li><%= link_to 'Help', help_path %></li>
-          <li><%= link_to 'Cart ( 0 )', '#' %></li>
-        </ul>
-      </section>
-    </nav>
-  </div>
+        <% else %>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <% end %>
+        <li><%= link_to 'Help', help_path %></li>
+        <li><%= link_to 'Cart ( 0 )', '#' %></li>
+      </ul>
+    </section>
+  </nav>
 </div>

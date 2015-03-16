@@ -1,52 +1,54 @@
-<div class="row">
+<div class="container">
+	<div class="row">
 
-	<div class="medium-12 columns">
-		<h1 id="title" class="text-center"><%= @book.title %></h1>
+		<div class="medium-12 columns">
+			<h1 id="title" class="text-center"><%= @book.title %></h1>
+		</div>
+
+		<div class="medium-3 medium-push-4 columns">
+			<%= image_tag "#{@book.isbn}.jpg", alt: 'Book Cover' %>
+		</div>
+
+		<div class="medium-4 medium-pull-2 columns">
+
+			<p>
+				<strong>Author:</strong>
+				<%= @book.author %>
+			</p>
+
+			<p>
+				<strong>Publisher:</strong>
+				<%= @book.publisher %>
+			</p>
+
+			<p>
+				<strong>Category:</strong>
+				<%= @book.category %>
+			</p>
+
+			<p>
+				<strong>ISBN:</strong>
+				<%= @book.isbn %>
+			</p>
+
+			<p>
+				<strong>Quantity Available:</strong>
+				<%= @book.quantity %>
+			</p>
+		</div>
 	</div>
 
-	<div class="medium-3 medium-push-4 columns">
-		<%= image_tag "#{@book.isbn}.jpg", alt: 'Book Cover' %>
-	</div>
+	<div class="row">
+		<div class="medium-">
+			<p>
+				<strong>Summary:</strong>
+				<%= @book.summary %>
+			</p>
 
-	<div class="medium-4 medium-pull-2 columns">
-
-		<p>
-			<strong>Author:</strong>
-			<%= @book.author %>	
-		</p>
-
-		<p>
-			<strong>Publisher:</strong> 
-			<%= @book.publisher %>
-		</p>
-
-		<p>
-			<strong>Category:</strong>
-			<%= @book.category %>
-		</p>
-
-		<p>
-			<strong>ISBN:</strong>
-			<%= @book.isbn %>
-		</p>
-
-		<p>
-			<strong>Quantity Available:</strong>
-			<%= @book.quantity %>
-		</p>
-	</div>
-</div>
-
-<div class="row">	
-	<div class="medium-">	
-		<p>
-			<strong>Summary:</strong>
-			<%= @book.summary %>
-		</p>
-
-		<% if is_admin? %>
-			<%= link_to 'Edit Book', edit_book_path(@book) %>
-			<%= link_to 'Delete Book', book_path(@book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>
-		<% end %>
+			<% if is_admin? %>
+				<%= link_to 'Edit Book', edit_book_path(@book) %>
+				<%= link_to 'Delete Book', book_path(@book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>
+			<% end %>
+		</div>
 	</div>
 </div>

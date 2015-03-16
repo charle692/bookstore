@@ -34,3 +34,16 @@
 #book_summary {
 	height: 100px;
 }
+
+#book_cover {
+	width: 100%;
+	height: auto;
+}
+
+#header1 {
+	position: absolute;
+	z-index: 2;
+	top: 250px;
+	left: 390px;
+	font-size: 60px;
+}

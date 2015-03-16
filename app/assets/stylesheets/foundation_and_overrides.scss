@@ -125,7 +125,7 @@ $font-family-custom: 'Quicksand', sans-serif;
 // $black       : #000000;
 
 // We use these to control various global styles
-$body-bg: #EBEBEB;
+$body-bg: #FFFFFF;
 // $body-font-color: $jet;
 $body-font-family: $font-family-custom;
 $body-font-weight: 400;
@@ -1362,16 +1362,16 @@ $input-font-family: $font-family-custom;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #EBEBEB;
+$topbar-bg-color: #FFFFFF;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: 45px;
+$topbar-height: 60px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
-$topbar-title-font-size: rem-calc(24);
+$topbar-title-font-size: rem-calc(33);
 
 // Style the top bar dropdown elements
 //$topbar-dropdown-bg: hsl(359, 6%, 83%);
@@ -1388,11 +1388,11 @@ $topbar-link-color-hover: #222222;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 $topbar-link-weight: 400;
-$topbar-link-font-size: rem-calc(14);
+$topbar-link-font-size: rem-calc(18);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-color-hover: #eeeeee;
-$topbar-link-bg-hover: #EBEBEB;
+$topbar-link-bg-hover: #F6F6F6;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 $topbar-link-font-family: 'Quicksand', sans-serif;
