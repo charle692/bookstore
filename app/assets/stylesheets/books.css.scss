@@ -6,7 +6,7 @@
 
 /* Index Page */
 .book_cover {
-	margin: 10px 0 5px;
+	//margin: 10px 0 5px;
 	padding-right: 20px;
 	width: auto;
 	height: 150px;
@@ -24,4 +24,48 @@
 
 #book_summary {
 	height: 100px;
+}
+
+.slider-container {
+	position: relative;
+	overflow: hidden;
+	border: 1px dashed gray;
+	height: 150px;
+}
+
+.slider-track {
+	position: absolute;
+	width: 2000px;
+}
+
+.slider-item {
+	float: left;
+	margin-right: 20px;
+}
+
+.slider-arrow-container {
+	background-color: gray;
+	opacity: 0.5;
+	position: absolute;
+	z-index: 4;
+	height: 100%;
+}
+
+.slider-arrow-container:hover {
+	opacity: 0.8;
+}
+
+.slider-arrow {
+	position: relative;
+	height: 50px;
+	z-index: 5;
+	top: 50px;
+}
+
+.slider-left-arrow {
+	left: 0px;
+}
+
+.slider-right-arrow {
+	right: 0px;
 }

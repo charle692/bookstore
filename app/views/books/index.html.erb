@@ -3,8 +3,8 @@
 		<h1 class="text-center">Books for Sale</h1>	
 	</div>	
 
-	<% @categories_hash.each do |label, books| %>
-		<div class="small-block-grid-2 medium-block-grid-4 large-block-grid-6 columns">
+	<% @categories.each do |label, books| %>
+		<div class="row">
 			<%= render partial: "slider_section", locals: {label: label, books: books} %>
 		</div>
 	<% end %>

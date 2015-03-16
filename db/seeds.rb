@@ -1,3 +1,5 @@
+Book.all.delete_all
+
 Book.new(
   isbn: '0151957479',
   quantity: '2',
