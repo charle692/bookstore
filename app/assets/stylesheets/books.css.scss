@@ -40,11 +40,12 @@
 }
 
 #header1 {
-	position: absolute;
 	z-index: 2;
-	top: 250px;
-	left: 390px;
+	position: absolute;
 	font-size: 60px;
+	top: 250px;
+	left: 0;
+	right: 0;
 }
 
 .slider {
@@ -92,4 +93,8 @@
 
 .slider-right-arrow {
 	right: 0px;
+}
+
+#book_properties {
+	margin-top: 30px;
 }
