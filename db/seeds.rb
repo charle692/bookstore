@@ -91,7 +91,7 @@ au.add_role(a)
   Book.new(
   isbn: '0345307675',
   quantity: '2',
-  title: 'Star Wards: Return of the Jedi',
+  title: 'Star Wars: Return of the Jedi',
   author: 'Goerge Lucas',
   publisher: 'LucasBooks',
   category: 'Science Fiction',

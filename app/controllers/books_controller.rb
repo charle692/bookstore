@@ -1,14 +1,14 @@
 class BooksController < ApplicationController
 	helper :application
 
-	before_action :deny_non_admins, except: [:index, :show]
+	before_action :deny_non_admins, except: [:index, :show, :search]
 
-	def index  
+	def index
 		@categories = {}
 		books = Book.all
 
 		books.each do |book|
-			unless @categories.has_key? book.category 
+			unless @categories.has_key? book.category
 				@categories[book.category] = []
 			end
 
@@ -16,26 +16,26 @@ class BooksController < ApplicationController
 		end
 	end
 
-	def show 
+	def show
 		@book = Book.find(params[:id])
 	end
 
-	def new 
+	def new
 		@book = Book.new
 	end
 
-	def edit 
+	def edit
 		@book = Book.find params[:id]
 	end
 
-	def create 
+	def create
 		@book = Book.new(book_params)
 
-		if book2 = Book.find_by(isbn: @book.isbn) 
+		if book2 = Book.find_by(isbn: @book.isbn)
 			book2.update_attribute "quantity", book2.quantity + @book.quantity
 			redirect_to book2
 		else
-			get_book_cover @book.isbn
+			get_book_cover @book.isbns
 			save_book @book
 		end
 	end
@@ -50,14 +50,18 @@ class BooksController < ApplicationController
 		end
 	end
 
-	def destroy 
+	def destroy
 		@book = Book.find params[:id]
 		@book.destroy
 
 		redirect_to root_path
 	end
 
-	private 
+	def search
+		@books = Book.basic_search({title: params[:search], category: params[:search], author: params[:search], isbn: params[:search]},  false)
+	end
+
+	private
 
 	def deny_non_admins
 		if !current_user || !current_user.is_role_by_name?('admin')
@@ -65,7 +69,7 @@ class BooksController < ApplicationController
 		end
 	end
 
-	def book_params 
+	def book_params
 		params.require(:book).permit(:isbn, :quantity, :title, :author, :summary, :publisher, :category)
 	end
 
