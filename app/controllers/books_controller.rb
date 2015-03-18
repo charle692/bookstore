@@ -58,7 +58,13 @@ class BooksController < ApplicationController
 	end
 
 	def search
-		@books = Book.basic_search({title: params[:search], category: params[:search], author: params[:search], isbn: params[:search]},  false)
+		@books = Book.basic_search({
+			 title: params[:search],
+			 category: params[:search],
+			 author: params[:search],
+			 isbn: params[:search]},  false)
+			
+		@search = params[:search]
 	end
 
 	private
@@ -70,7 +76,14 @@ class BooksController < ApplicationController
 	end
 
 	def book_params
-		params.require(:book).permit(:isbn, :quantity, :title, :author, :summary, :publisher, :category)
+		params.require(:book).permit(
+		 :isbn,
+		 :quantity,
+		 :title,
+		 :author,
+		 :summary,
+		 :publisher,
+		 :category )
 	end
 
 	# Gets book cover page

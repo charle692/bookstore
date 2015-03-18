@@ -1,11 +1,18 @@
-.container {
-	background: #ffffff;
-}
-
 .search {
 	margin-top: 10px;
 }
 
 #search_input {
-	width: 400px;
+	width: 500px;
+	border-radius: 10px;
+	background: url('search_black.png') no-repeat 7px 7px;
+	padding-left: 27px;
+	background-size: 15px 15px;
+}
+
+#search_icon {
+	background-image: url('search.png');
+	background-size: 17px 17px;
+	background-repeat: no-repeat;
+	background-position: center;
 }
