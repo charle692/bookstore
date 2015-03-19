@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
 	def index
 		@categories = {}
-		books = Book.all
+		books = Book.where deleted: false
 
 		books.each do |book|
 			unless @categories.has_key? book.category
@@ -35,7 +35,7 @@ class BooksController < ApplicationController
 			book2.update_attribute "quantity", book2.quantity + @book.quantity
 			redirect_to book2
 		else
-			get_book_cover @book.isbns
+			get_book_cover @book.isbn
 			save_book @book
 		end
 	end
@@ -51,8 +51,8 @@ class BooksController < ApplicationController
 	end
 
 	def destroy
-		@book = Book.find params[:id]
-		@book.destroy
+		@books = Book.where id: params[:id]
+		@books.update_all deleted: true
 
 		redirect_to root_path
 	end
@@ -63,8 +63,9 @@ class BooksController < ApplicationController
 			 category: params[:search],
 			 author: params[:search],
 			 isbn: params[:search]},  false)
-			
+
 		@books = @books.paginate(page: params[:page])
+
 	end
 
 	private
@@ -83,7 +84,8 @@ class BooksController < ApplicationController
 		 :author,
 		 :summary,
 		 :publisher,
-		 :category )
+		 :category,
+		 :deleted )
 	end
 
 	# Gets book cover page

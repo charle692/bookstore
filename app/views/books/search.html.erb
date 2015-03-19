@@ -1,6 +1,12 @@
 <div class="container">
   <div class='row'>
-    <h1 class='text-center'>Search Results for: "<%= params[:search] %>"</h1>
+    
+    <% if !@books.empty? %>
+      <h1 class='text-center'>Search Results for: "<%= params[:search] %>"</h1>
+    <% else %>
+      <h1 class='text-center'>Nothing found for: "<%= params[:search] %>"</h1>
+    <% end %>
+
     <div class="medium-10 medium-push-5 columns">
       <p>
         <%= will_paginate %>
@@ -40,6 +46,5 @@
         </p>
       </div>
     </div>
-
   </div>
 </div>
