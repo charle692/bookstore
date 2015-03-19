@@ -64,7 +64,7 @@ class BooksController < ApplicationController
 			 author: params[:search],
 			 isbn: params[:search]},  false)
 			
-		@search = params[:search]
+		@books = @books.paginate(page: params[:page])
 	end
 
 	private
