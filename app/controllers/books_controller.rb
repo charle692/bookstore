@@ -35,7 +35,6 @@ class BooksController < ApplicationController
 			book2.update_attribute "quantity", book2.quantity + @book.quantity
 			redirect_to book2
 		else
-			get_book_cover @book.isbn
 			save_book @book
 		end
 	end
@@ -86,13 +85,6 @@ class BooksController < ApplicationController
 		 :publisher,
 		 :category,
 		 :deleted )
-	end
-
-	# Gets book cover page
-	def get_book_cover isbn
-		File.open("/home/ryan/Dev/Rails_Development/bookstore/app/assets/images/#{isbn}.jpg", "wb") do |f|
-			f.write(open("http://covers.librarything.com/devkey/KEY/medium/isbn/#{isbn}").read)
-		end
 	end
 
 	def save_book book
