@@ -113,7 +113,7 @@ au.add_role(a)
   publisher: 'LucasBooks',
   category: 'Science Fiction',
   summary: 'Luke Skywalker was a twenty-year-old who lived and worked on his
-  uncle\'s farm on the remote planet of Tatooine...and he was bored beyond
+  uncle\'s farm on the remote planet of Tatooine... and he was bored beyond
   belief. He yearned for adventures that would take him beyond the farthest
   galaxies. But he got much more than he bargained for....').save
 
