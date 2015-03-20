@@ -30,7 +30,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'textacular'
 
-gem 'will_paginate'
+gem 'will_paginate-foundation'
 
 # Spring speeds up development by keeping your application running in the
 # background. Read more: https://github.com/rails/spring

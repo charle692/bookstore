@@ -14,6 +14,10 @@
 	right: 0;
 }
 
+#book_cover {
+	background-size: cover;
+}
+
 .slider {
 	margin: 50px 40px 50px;
 }
@@ -92,4 +96,9 @@
 	margin: 10px 10px 10px;
 	height: 150px;
 	width: auto;
+}
+
+.book_search_info {
+	list-style-type: none;
+	margin: 0 0 10px;
 }

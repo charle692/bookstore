@@ -1,15 +1,16 @@
 <div class="container">
   <div class='row'>
-    
     <% if !@books.empty? %>
       <h1 class='text-center'>Search Results for: "<%= params[:search] %>"</h1>
     <% else %>
       <h1 class='text-center'>Nothing found for: "<%= params[:search] %>"</h1>
     <% end %>
+  </div>
 
-    <div class="medium-10 medium-push-5 columns">
+  <div class="row">
+    <div class="medium-10 medium-push-4 columns">
       <p>
-        <%= will_paginate %>
+        <%= will_paginate renderer: FoundationPagination::Rails%>
       </p>
     </div>
   </div>
@@ -25,9 +26,12 @@
 
           <div class="medium-10 columns">
             <h3><%= link_to book.title, book_path(book) %></h3>
-            <p>
-              by: <%= link_to book.author, search_path(book.author) %>
-            </p>
+
+            <ul class="book_search_info">
+              <li>by: <%= link_to book.author, search_path(book.author) %></li>
+              <li>Category: <%= link_to book.category, search_path(book.category) %></li>
+            </ul>
+
             <p>
               <%= book.summary %>
             </p>
@@ -40,9 +44,9 @@
     <% end %>
 
     <div class="row">
-      <div class="medium-10 medium-push-5 columns">
+      <div class="medium-10 medium-push-4 columns">
         <p>
-          <%= will_paginate %>
+          <%= will_paginate renderer: FoundationPagination::Rails %>
         </p>
       </div>
     </div>

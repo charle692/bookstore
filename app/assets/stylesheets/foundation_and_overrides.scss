@@ -932,7 +932,7 @@ $input-font-family: $font-family-custom;
 // We use these for the pagination anchor links
 // $pagination-link-pad: rem-calc(1 10 1);
 // $pagination-link-font-color: $aluminum;
-// $pagination-link-active-bg: scale-color($white, $lightness: -10%);
+$pagination-link-active-bg: #F6F6F6;
 
 // We use these for disabled anchor links
 // $pagination-link-unavailable-cursor: default;
@@ -940,11 +940,11 @@ $input-font-family: $font-family-custom;
 // $pagination-link-unavailable-bg-active: transparent;
 
 // We use these for currently selected anchor links
-// $pagination-link-current-background: $primary-color;
+$pagination-link-current-background: #E9573F;
 // $pagination-link-current-font-color: $white;
 // $pagination-link-current-font-weight: $font-weight-bold;
 // $pagination-link-current-cursor: default;
-// $pagination-link-current-active-bg: $primary-color;
+$pagination-link-current-active-bg: #E9573F;
 
 // 21. Panels
 // - - - - - - - - - - - - - - - - - - - - - - - - -
