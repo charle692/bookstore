@@ -32,6 +32,10 @@
               <li>Category: <%= link_to book.category, search_path(book.category) %></li>
             </ul>
 
+            <p>
+              $<%= book.price %>
+            </p>
+
             <div class="book_summary">
               <%= book.summary %>
             </div>

@@ -19,6 +19,7 @@ au.add_role(a)
   publisher: 'Houghton Mifflin Harcourt',
   category: 'History',
   deleted: 'false',
+  price: '5.00',
   summary: 'Harold Bloom explores our Western
   literary tradition by concentrating on the works of twenty-six authors
   central to the Canon. He argues against ideology in literary criticism;
@@ -48,6 +49,7 @@ au.add_role(a)
   publisher: 'University of Chicago Press',
   category: 'Education',
   deleted: 'false',
+  price: '6.50',
   summary: 'Those who work with words know how
   dramatically publishing has changed in the past decade, with technology now
   informing and influencing every stage of the writing and publishing
@@ -98,6 +100,7 @@ au.add_role(a)
   publisher: 'LucasBooks',
   category: 'Science Fiction',
   deleted: 'false',
+  price: '15.00',
   summary: 'It was a
   dark time for the rebel alliance...Han Solo, frozen in carbonite, had been
   delivered into the hands of the vile gangster Jabba the Hutt. Determined to
@@ -116,10 +119,11 @@ au.add_role(a)
   publisher: 'LucasBooks',
   category: 'Science Fiction',
   deleted: 'false',
+  price: '15.00',
   summary: 'Luke Skywalker was a twenty-year-old who lived and worked on his
   uncle\'s farm on the remote planet of Tatooine... and he was bored beyond
   belief. He yearned for adventures that would take him beyond the farthest
-  galaxies. But he got much more than he bargained for....').save
+  galaxies. But he got much more than he bargained for...').save
 
   Book.new(
   isbn: '0439136369',
@@ -129,6 +133,7 @@ au.add_role(a)
   category: 'Fiction',
   publisher: 'Scholastic',
   deleted: 'false',
+  price: '15.75',
   summary: 'For twelve long years, the dread fortress of Azkaban held an
   infamous prisoner named Sirius Black. Convicted of killing thirteen people
   with a single curse, he was said to be the heir apparent to the Dark Lord,
@@ -165,6 +170,7 @@ au.add_role(a)
   publisher: 'Scholastic',
   category: 'Fiction',
   deleted: 'false',
+  price: '15.75',
   summary: 'In Harry
   Potter and the Goblet of Fire, Harry is midway through both his training as a
   wizard and his coming of age. He wants to get away from the malicious
@@ -200,6 +206,7 @@ au.add_role(a)
   publisher: 'Scholastic',
   category: 'Fiction',
   deleted: 'false',
+  price: '15.75',
   summary: 'In
   Harry Potter and the Order of the Phoenix, Lord Voldemort has returned to the
   Wizarding world, presenting a threat that neither the magical government nor
@@ -236,6 +243,7 @@ au.add_role(a)
   publisher: 'Scholastic',
   category: 'Fiction',
   deleted: 'false',
+  price: '15.75',
   summary: 'In Harry Potter and the Chamber of Secrets, the summer after
   Harry\'s first year at Hogwarts has been his worst summer ever… the Dursleys
   more distant and horrible than ever before. But just as he\'s packing his
@@ -270,6 +278,7 @@ au.add_role(a)
   publisher: 'Scholastic',
   category: 'Fiction',
   deleted: 'false',
+  price: '15.75',
   summary: 'When Harry Potter and the Half-Blood Prince opens, the war against
   Voldemort has begun. The Wizarding world has split down the middle, and as
   the casualties mount, the effects even spill over onto the Muggles.
@@ -307,6 +316,7 @@ au.add_role(a)
   publisher: 'Yearling',
   category: 'Fiction',
   deleted: 'false',
+  price: '5.75',
   summary: 'Stanley Yelnats is under a curse. A curse that began with his
   no-good-dirty-rotten-pig-stealing-great-great-grandfather and has since
   followed generations of Yelnatses. Now Stanley has been unjustly sent
@@ -329,6 +339,7 @@ au.add_role(a)
   publisher: 'Pottermore',
   category: 'Fiction',
   deleted: 'false',
+  price: '15.75',
   summary: 'THE TALES OF BEEDLE THE BARD, a Wizarding classic, first came to
   Muggle readers\' attention in the book known as HARRY POTTER
   AND THE DEATHLY HALLOWS. Now, thanks to Hermione Granger\'s new translation
@@ -350,6 +361,7 @@ au.add_role(a)
   publisher: 'Mariner Books',
   category: 'Fiction',
   deleted: 'false',
+  price: '12.25',
   summary: 'Frodo and his Companions of the Ring have been beset by danger
   during their quest to prevent the Ruling Ring from falling into the hands of
   the Dark Lord by destroying it in the Cracks of Doom. They have lost the
@@ -368,6 +380,7 @@ au.add_role(a)
   publisher: 'Recorded Books',
   category: 'Fiction',
   deleted: 'false',
+  price: '12.25',
   summary: 'Frodo Baggins and his companion Sam Gamgee, set off along thesame
   road down which Bilbo the Hobbit had accompanied Thorin Oakenshield and
   his dwarves all those years ago. Much danger and many strange encounters
@@ -381,6 +394,7 @@ au.add_role(a)
   publisher: 'Houghton Mifflin',
   category: 'Fiction',
   deleted: 'false',
+  price: '12.25',
   summary: 'One Ring to rule them all, One Ring to find them, One Ring to bring
   them all and in the darkness bind them. In ancient times the Rings of Power
   were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One
@@ -409,6 +423,7 @@ au.add_role(a)
   publisher: 'Simon & Schuster',
   category: 'Fiction',
   deleted: 'false',
+  price: '12.25',
   summary: 'At the age of forty-eight, writer and film critic David Denby
   returned to Columbia University and re-enrolled in two core courses in
   Western civilization to confront the literary and philosophical
@@ -418,5 +433,5 @@ au.add_role(a)
   Locke and Nietzsche. Conrad and Woolf. The resulting personal odyssey
   is an engaging blend of self-discovery, cultural commentary,
   reporting, criticism, and autobiography -- an inspiration for anyone
-  in love with the written word').save
+  in love with the written word.').save
 end

@@ -44,10 +44,6 @@ Book.search_summary = function() {
   }
 }
 
-Book.show_summary = function() {
-
-}
-
 //SliderHandler object (class)
 function SliderHandler(inTrack, inLeftArrow, inRightArrow) {
   this.track = inTrack;

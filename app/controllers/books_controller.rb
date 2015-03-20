@@ -18,6 +18,7 @@ class BooksController < ApplicationController
 
 	def show
 		@book = Book.find(params[:id])
+		gon.summary = @book.summary
 	end
 
 	def new
@@ -84,7 +85,8 @@ class BooksController < ApplicationController
 		 :summary,
 		 :publisher,
 		 :category,
-		 :deleted )
+		 :deleted,
+		 :price)
 	end
 
 	def save_book book
