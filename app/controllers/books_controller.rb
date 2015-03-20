@@ -18,7 +18,6 @@ class BooksController < ApplicationController
 
 	def show
 		@book = Book.find(params[:id])
-		gon.summary = @book.summary
 	end
 
 	def new

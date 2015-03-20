@@ -165,8 +165,13 @@ SliderHandler.prototype.hideRightSlide = function(handler) {
   handler.leftEnabled = false;
 }
 
-//It starts this stuff up
-$(document).ready(function() {
+Book.ready = function() {
   Book.setup();
   Book.search_summary();
-});
+}
+
+//Needed for when turbolinks isn't doing it's magic
+$(document).ready(Book.ready);
+
+//Needed for when turbolinks is doing it's magic 
+$(document).on('page:load', Book.ready);
