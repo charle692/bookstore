@@ -32,9 +32,15 @@
               <li>Category: <%= link_to book.category, search_path(book.category) %></li>
             </ul>
 
-            <p>
-              $<%= book.price %>
-            </p>
+            <div class="row">
+              <div class="price medium-1 columns">
+                $<%= book.price %>
+              </div>
+
+              <div class="medium-4 medium-pull-6 columns">
+                <%= link_to 'Add to Cart', '#', class: 'button small' %>
+              </div>
+            </div>
 
             <div class="book_summary">
               <%= book.summary %>
