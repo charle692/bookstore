@@ -24,12 +24,26 @@ Book.setup = function() {
     Book.sliderHandlers[categoryName] = sliderHandler;
 
     sliderHandler.init();
-
-    
-
-    
   });
 };
+
+Book.search_summary = function() {
+  var i;
+  var divs = document.getElementsByClassName('book_summary');
+
+  for(i=0;i<divs.length;i++) {
+    if (divs[i].innerHTML.substring(0,300).charAt(299) === " ") {
+      divs[i].innerHTML = divs[i].innerHTML.substring(0,299) + "...";
+    } else {
+      for(var x=300; x>0; x--) {
+        if (divs[i].innerHTML.substring(0, x).charAt(x-1) === " ") {
+          divs[i].innerHTML = divs[i].innerHTML.substring(0,x-1) + "...";
+          break;
+        }
+      }
+    }
+  }
+}
 
 //SliderHandler object (class)
 function SliderHandler(inTrack, inLeftArrow, inRightArrow) {
@@ -155,4 +169,5 @@ SliderHandler.prototype.hideRightSlide = function(handler) {
 //It starts this stuff up
 $(document).ready(function() {
   Book.setup();
+  Book.search_summary();
 });

@@ -1,6 +1,6 @@
 /* Index Page */
 .book_cover {
-	padding-right: 20px;
+	margin-right: 20px;
 	width: auto;
 	height: 175px;
 }
@@ -73,10 +73,6 @@
 	box-shadow: 0 2px 8px 0 #222;
 }
 
-#book_summary {
-	height: 100px;
-}
-
 #book_cover {
 	width: 100%;
 	height: auto;
@@ -101,4 +97,3 @@
 .book_search_info {
 	list-style-type: none;
 	margin: 0 0 10px;
-}
