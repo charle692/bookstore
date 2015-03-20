@@ -28,10 +28,9 @@ Book.setup = function() {
 };
 
 Book.search_summary = function() {
-  var i;
   var divs = document.getElementsByClassName('book_summary');
 
-  for(i=0;i<divs.length;i++) {
+  for(var i=0;i<divs.length;i++) {
     if (divs[i].innerHTML.substring(0,300).charAt(299) === " ") {
       divs[i].innerHTML = divs[i].innerHTML.substring(0,299) + "...";
     } else {
@@ -43,6 +42,10 @@ Book.search_summary = function() {
       }
     }
   }
+}
+
+Book.show_summary = function() {
+
 }
 
 //SliderHandler object (class)
