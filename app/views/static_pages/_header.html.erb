@@ -20,12 +20,12 @@
                         destroy_user_session_path,
                         data: {method: :delete} %>
         </li>
-      <% end %>
 
-      <% if is_admin? %>
-        <li>
-          <%= link_to 'Add a new Book', new_book_path %>
-        </li>
+        <% if is_admin? %>
+          <li>
+            <%= link_to 'Add a new Book', new_book_path %>
+          </li>
+        <% end %>
       <% else %>
         <li>
           <%= link_to 'Sign In', new_user_session_path %>
