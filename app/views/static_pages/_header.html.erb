@@ -33,7 +33,7 @@
       <% end %>
 
       <li><%= link_to 'Help', help_path %></li>
-      <li><%= link_to 'Cart ( 0 )', '#' %></li>
+      <li id="cart_link"><%= link_to 'Cart ( 0 )', '#' %></li>
     </ul>
 
     <ul id="search_list">
@@ -48,5 +48,10 @@
         <% end %>
       </li>
     </ul>
+
+    <div id="cart">
+      <%= render partial: "books/cart" %>
+    </div>
+
   </section>
 </nav>
