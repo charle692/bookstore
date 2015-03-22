@@ -4,18 +4,44 @@
 </div>
 <div id="cart_container">
   <div class="cart-header">
-    <h2>Your Cart (0)</h2>
+    <h2>Your Cart ( 2 )</h2>
   </div>
 
+  <%
+    #Rails block that is a bit of a hack to get some books in this cart.
+    first_book = Book.where("title = ?", "Star Wars: A New Hope")[0]
+    second_book = Book.where("title = ?", "The Chicago Manual of Style")[0]
+  %>
+
   <div class="cart-contents">
-    <div>
-      <span>You have no items in your cart</span>
+    <div class="cart-book-container">
+        <div class="left">
+          <%= image_tag "#{first_book.isbn}.jpg", 
+            class: 'cart-book', 
+            alt: "#{first_book.title}" %>
+        </div>
+        <div class="right">
+          <p class="title"><%= first_book.title %></p>
+          <p class="price">$<%= sprintf '%.2f', first_book.price %></p>
+        </div>
+    </div>
+
+    <div class="cart-book-container">
+        <div class="left">
+          <%= image_tag "#{second_book.isbn}.jpg", 
+            class: 'cart-book', 
+            alt: "#{second_book.title}" %>
+        </div>
+        <div class="right">
+          <p class="title"><%= second_book.title %></p>
+          <p class="price">$<%= sprintf '%.2f', second_book.price %></p>
+        </div>
     </div>
   </div>
 
   <div class="cart-footer">
     <div class="cart-footer-left">
-      <h5>Subtotal: $0.00</h5>
+      <h5>Subtotal: $21.50</h5>
     </div>
     <div class="cart-footer-right">
       <button>
