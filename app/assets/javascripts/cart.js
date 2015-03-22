@@ -19,14 +19,12 @@ Cart.ready = function() {
 
 Cart.hide = function() {
   var cart = $("#cart");
-  console.log("hiding");
   Cart.isVisible = false;
   cart.css("visibility", "hidden");
 };
 
 Cart.show = function() {
   var cart = $("#cart");
-  console.log("showing");
   Cart.isVisible = true;
   cart.css("visibility", "visible");
 };
