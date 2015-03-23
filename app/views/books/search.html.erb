@@ -28,8 +28,11 @@
             <h3><%= link_to book.title, book_path(book) %></h3>
 
             <ul class="book_search_info">
-              <li>by: <%= link_to book.author, search_path(book.author) %></li>
-              <li>Category: <%= link_to book.category, search_path(book.category) %></li>
+              <!-- This is just temporary for demonstration purposes -->
+              <li>by: <%= link_to book.author,
+               'http://localhost:3000/search?utf8=%E2%9C%93&search=J.K.+Rowling&commit=Search' %></li>
+              <li>Category: <%= link_to book.category,
+               'http://localhost:3000/search?utf8=%E2%9C%93&search=Science+Fiction&commit=Search' %></li>
             </ul>
 
             <div class="row">

@@ -4,16 +4,16 @@
 
 #search_input {
 	width: 500px;
-	border-radius: 10px;
+	border-radius: 5px;
 	background: url('search_black.png') no-repeat 7px 7px;
 	padding-left: 27px;
 	background-size: 15px 15px;
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	right: 0;
-	top: 16px;
+}
+
+#search_button {
+	padding: 5px 5px 5px;
+	margin-left: 20px;
+	border-radius: 5px;
 }
 
 #search_icon {

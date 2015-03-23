@@ -1,9 +1,9 @@
 class Book < ActiveRecord::Base
 	# Makes sure that both an isbn and quantity are entered
-	validates :isbn, :quantity, :title, :author, presence: true 
+	validates :isbn, :quantity, :title, :author, :price, :category, presence: true 
 	validate :isbn_length
 
-	private 
+	private
 	def isbn_length
 		unless isbn.size == 10 or isbn.size == 13
 			errors.add(:isbn, "numbers must be 10 or 13 characters long #{isbn}")
