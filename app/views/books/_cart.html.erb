@@ -16,8 +16,8 @@
   <div class="cart-contents">
     <div class="cart-book-container">
         <div class="left">
-          <%= image_tag "#{first_book.isbn}.jpg", 
-            class: 'cart-book', 
+          <%= image_tag "#{first_book.isbn}.jpg",
+            class: 'cart-book',
             alt: "#{first_book.title}" %>
         </div>
         <div class="right">
@@ -28,8 +28,8 @@
 
     <div class="cart-book-container">
         <div class="left">
-          <%= image_tag "#{second_book.isbn}.jpg", 
-            class: 'cart-book', 
+          <%= image_tag "#{second_book.isbn}.jpg",
+            class: 'cart-book',
             alt: "#{second_book.title}" %>
         </div>
         <div class="right">
@@ -44,9 +44,7 @@
       <h5>Subtotal: $21.50</h5>
     </div>
     <div class="cart-footer-right">
-      <button>
-        Checkout
-      </button>
+      <%= link_to 'Checkout', checkout_path, class: 'button', id: 'cart_checkout' %>
     </div>
   </div>
 </div>

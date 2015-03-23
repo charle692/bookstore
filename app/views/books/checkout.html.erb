@@ -1,0 +1,195 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">Checkout</h1>
+
+    <%
+    #Rails block that is a bit of a hack to get some books in this cart.
+    first_book = Book.where("title = ?", "Star Wars: A New Hope")[0]
+    second_book = Book.where("title = ?", "The Chicago Manual of Style")[0]
+    %>
+
+    <div class="container">
+      <div class="row">
+        <div class="medium-2 columns">
+          <%= image_tag "#{first_book.isbn}.jpg", alt: "#{first_book.title}", class: 'checkout_book' %>
+        </div>
+
+        <div class="medium-10 columns">
+          <h3/><%= first_book.title %></h3>
+          <ul>
+            <li>
+              by <%= first_book.author %>
+            </li>
+            <li>
+              $15.00
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="medium-2 columns">
+          <%= image_tag "#{second_book.isbn}.jpg", alt: "#{second_book.title}", class: 'checkout_book' %>
+        </div>
+
+        <div class="medium-10 columns">
+          <h3/><%= second_book.title %></h3>
+          <ul>
+            <li>
+              by <%= second_book.author %>
+            </li>
+            <li>
+              $6.50
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <%= form_tag '#', :method => 'get' do %>
+      <div id="shipping">
+        <h2 class="text-center">Shipping Information</h2>
+          <%= label_tag 'Quantity' %>
+          <%= number_field_tag 'Quantity' %>
+
+          <%= label_tag 'Full Name' %>
+          <%= text_field_tag 'Full Name' %>
+
+          <%= label_tag 'Address Line 1' %>
+          <%= text_field_tag 'Address Line 1' %>
+
+          <%= label_tag 'Optional Address Line 2' %>
+          <%= text_field_tag 'Optional Address Line 2' %>
+
+          <%= label_tag 'City' %>
+          <%= text_field_tag 'City'%>
+
+          <%= label_tag 'Province' %>
+          <%= select_tag 'Province',
+          "<option>Alberta</option>
+          <option>British Columbia</option>
+          <option>Manitoba</option>
+          <option>New Brunswick</option>
+          <option>Newfoundland and Labrador</option>
+          <option>Nova Scotia</option>
+          <option>Ontario</option>
+          <option>Prince Edward Island</option>
+          <option>Quebec</option>
+          <option>Saskatchewan</option>".html_safe, include_blank: true %>
+
+          <%= label_tag 'Postal Code' %>
+          <%= text_field_tag 'Postal Code' %>
+      </div>
+
+      <div id="payment">
+        <h2 class="text-center">Payment Information</h2>
+        <%= label_tag 'Type' %>
+        <div class="row">
+          <div class="medium-1 columns">
+            <%= radio_button_tag 'Type', 'Credit', true %>
+          </div>
+
+          <div class="medium-11 columns">
+            <div class="medium-1 medium-pull-1 columns">
+              <%= image_tag 'visa.png', class: 'credit_card'%>
+            </div>
+
+            <div class="medium-1 medium-pull-1 columns">
+              <%= image_tag 'mastercard.jpg', class: 'credit_card' %>
+            </div>
+
+            <div class="medium-1 medium-pull-1 columns">
+              <%= image_tag 'amex.jpg', class: 'credit_card' %>
+            </div>
+
+            <div class="medium-1 medium-pull-9 columns">
+              <%= image_tag 'discover.png', class: 'credit_card' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="medium-1 columns">
+            <%= radio_button_tag 'Type', 'Paypal' %>
+          </div>
+
+          <div class="medium-1 medium-pull-10 columns">
+            <%= image_tag 'paypal.png' %>
+          </div>
+        </div>
+
+        <div class="container">
+          <%= label_tag 'Cardholder Name', 'Cardholder Name' %>
+          <%= text_field_tag 'Cardholder Name' %>
+        </div>
+
+        <div class="row">
+          <div class="medium-10 columns">
+            <%= label_tag 'Number' %>
+            <%= number_field_tag 'Number' %>
+          </div>
+
+          <div class="medium-2 columns">
+            <%= label_tag 'Security Code', 'Security Code' %>
+            <%= number_field_tag 'Security Code' %>
+          </div>
+        </div>
+
+        <%= label_tag 'Expiry Date' %>
+        <%= date_field_tag 'Expiry Date' %>
+      </div>
+
+        <%= submit_tag "Checkout", class: 'button expand', id: 'checkout_button' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="summary">
+  <h4 class="text-center">Price Summary</h4>
+  <hr>
+
+  <div class="row">
+    <div class="medium-7 columns">
+      <p>
+        <strong>Quantity</strong>
+      </p>
+      <p>
+        <strong>Subtotal</strong>
+      </p>
+      <p>
+        <strong>Shipping</strong>
+      </p>
+    </div>
+
+    <div class="medium-5 columns">
+      <p>
+        2
+      </p>
+      <p>
+        $21.50
+      </p>
+      <p>
+        $1.50
+      </p>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="medium-7 columns">
+        <p>
+          <strong>Total (CDN)</strong>
+        </p>
+      </div>
+
+      <div class="medium-5 columns">
+        <p>
+          $23.00
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

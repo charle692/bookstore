@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 	helper :application
 
-	before_action :deny_non_admins, except: [:index, :show, :search]
+	before_action :deny_non_admins, except: [:index, :show, :search, :checkout]
 
 	def index
 		@categories = {}
@@ -64,7 +64,11 @@ class BooksController < ApplicationController
 			 isbn: params[:search]},  false)
 
 		@books = @books.paginate(page: params[:page])
+	end
 
+	def checkout
+		@first_book = Book.where title: 'Star Wars: A New Hope'
+		@second_book = Book.where title: 'The Chicago Manual of Style'
 	end
 
 	private

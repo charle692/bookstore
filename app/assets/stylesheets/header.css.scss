@@ -12,7 +12,6 @@
 
 #search_button {
 	padding: 5px 5px 5px;
-	margin-left: 20px;
 	border-radius: 5px;
 }
 
@@ -68,6 +67,11 @@
 	right: 15px;
 	top: 10px;
 	cursor: pointer;
+}
+
+#cart_checkout {
+	position: relative;
+	top: 0;
 }
 
 .cart-contents {

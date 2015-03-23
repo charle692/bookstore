@@ -98,6 +98,42 @@
 	margin: 0 0 10px;
 }
 
+/*Checkout page*/
+.checkout_book {
+	height: 150px;
+	width: auto;
+}
+
+.credit_card {
+	margin-right: 10px;
+}
+
+#checkout_button {
+	margin-top: 20px;
+}
+
+#shipping, #payment {
+	margin-top: 50px;
+}
+
+#shipping, #summary {
+	background-color: #eee;
+	padding: 10px 10px 10px;
+}
+
+#summary {
+	position: absolute;
+	top: 150px;
+	right: 230px;
+	position: fixed;
+	padding-bottom: 5px;
+}
+
+#cardholder_name {
+	margin-top: 5px;
+}
+
+
 /*Edit and Add Book Page*/
 #book_summary {
 	height: 100px;
@@ -120,4 +156,11 @@ input[type="text"], textarea {
 
 .button, button {
 	border-radius: 5px;
+}
+
+ul {
+	list-style: none;
+	li {
+		margin-left: -10px;
+	}
 }

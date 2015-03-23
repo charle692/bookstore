@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :books
   get 'search' => 'books#search'
   root 'books#index'
+  get 'checkout' => 'books#checkout'
 end
