@@ -1,8 +1,24 @@
+/* search */
+.search {
+	margin-top: 10px;
+}
+
+#search_input {
+	border-radius: 5px;
+	background: url('search_black.png') no-repeat 7px 11px;
+	padding-left: 27px;
+	background-size: 15px 15px;
+}
+
+#search_button {
+	padding: 10px 10px 10px;
+	border-radius: 5px;
+}
+
 /* Index Page */
 .book_cover {
 	margin-right: 20px;
 	width: auto;
-	height: 175px;
 }
 
 #title {
@@ -14,57 +30,112 @@
 	right: 0;
 }
 
-#book_cover {
-	background-size: cover;
+@media screen and (min-width: 641px){
+	.slider {
+		margin: 50px 40px 50px;
+	}
+
+	.slider-container {
+		position: relative;
+		overflow: hidden;
+		height: 175px;
+	}
+
+	.slider-track {
+		position: absolute;
+		width: 3000px;
+	}
+
+	.slider-item {
+		float: left;
+		margin-right: 20px;
+	}
+
+	.slider-arrow-container {
+		background-color: gray;
+		opacity: 0.5;
+		position: absolute;
+		z-index: 4;
+		height: 100%;
+	}
+
+	.slider-arrow-container:hover {
+		opacity: 0.8;
+	}
+
+	.slider-arrow {
+		position: relative;
+		height: 50px;
+		z-index: 5;
+		top: 60px;
+	}
+
+	.slider-left-arrow {
+		left: 0px;
+	}
+
+	.slider-right-arrow {
+		right: 0px;
+	}
+
+	.book_cover {
+		height: 175px;
+	}
 }
 
-.slider {
-	margin: 50px 40px 50px;
-}
+@media screen and (max-width: 640px){
+	.slider {
+		margin-left: auto;
+		margin-right: auto;
+		margin: 30px 0 30px;
+	}
 
-.slider-container {
-	position: relative;
-	overflow: hidden;
-	height: 175px;
-}
+	.slider-container {
+		position: relative;
+		overflow: hidden;
+		height: 125px;
+		width: 100%;
+	}
 
-.slider-track {
-	position: absolute;
-	width: 3000px;
-}
+	.slider-track {
+		position: absolute;
+		width: 3000px;
+	}
 
-.slider-item {
-	float: left;
-	margin-right: 20px;
-}
+	.slider-item {
+		float: left;
+		margin-right: 20px;
+	}
 
-.slider-arrow-container {
-	background-color: gray;
-	opacity: 0.5;
-	position: absolute;
-	z-index: 4;
-	height: 100%;
-}
+	.slider-arrow-container {
+		position: absolute;
+		height: 100%;
+	}
 
-.slider-arrow-container:hover {
-	opacity: 0.8;
-}
+	.slider-arrow-container:hover {
+		opacity: 0.8;
+	}
 
-.slider-arrow {
-	position: relative;
-	height: 50px;
-	z-index: 5;
-	top: 60px;
-}
+	.slider-arrow {
+		visibility: hidden;
+	}
 
-.slider-left-arrow {
-	left: 0px;
-}
+	.slider-left-arrow {
+		left: 0px;
+	}
 
-.slider-right-arrow {
-	right: 0px;
-}
+	.slider-right-arrow {
+		right: 0px;
+	}
 
+	.book_cover {
+		height: 125px;
+	}
+
+	.category {
+		margin-left: 5px;
+	}
+}
 
 /* Show Page */
 .big_book_cover {

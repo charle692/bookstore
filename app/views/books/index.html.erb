@@ -1,13 +1,8 @@
-<%= image_tag 'book_cover.jpg', id: 'book_cover',
- alt: 'Banner Photo of a book', height: '700', width: '1905' %>
-
-<h1 class='text-center' id="title">Welcome to the Bookstore!</h1>
+<%= render 'search' %>
 
 <% @categories.each do |label, books| %>
-
 	<div class="slider">
 		<%= render partial: "slider_section",
 		 locals: {label: label, books: books} %>
 	</div>
-
 <% end %>
