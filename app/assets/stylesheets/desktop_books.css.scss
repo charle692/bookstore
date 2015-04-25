@@ -77,4 +77,15 @@
 		height: 180px;
 		width: auto;
 	}
+
+	.book_summary {
+		display: none; 
+		position: relative;
+		top: -10px;
+	}
+
+	.show_summary {
+		position: relative; 
+		top: -10px;
+	}
 }

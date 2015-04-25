@@ -43,10 +43,10 @@
               </div>
             </div>
 
-            <div class="book_summary">
+            <%= link_to 'Show Summary', '#', class: 'show_summary', id: "book_#{book.id}" %>
+            <%= div_for(book, class: "book_summary") do %>
               <%= book.summary %>
-            </div>
-
+            <% end %>
           </div>
 
 

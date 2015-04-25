@@ -28,21 +28,18 @@ Book.setup = function() {
 };
 
 Book.search_summary = function() {
-  var divs = document.getElementsByClassName('book_summary');
-
-  for(var i=0;i<divs.length;i++) {
-    if (divs[i].innerHTML.substring(0,300).charAt(299) === " ") {
-      divs[i].innerHTML = divs[i].innerHTML.substring(0,299) + "...";
+  $('.show_summary').click(function(event) {
+    if ($('div#' + event.target.id).is(":hidden")) {
+      $('div#' + event.target.id).slideDown();
+      $('html,body').animate({
+        scrollTop: $('div#' + event.target.id).offset().top - 500
+      })
     } else {
-      for(var x=300; x>0; x--) {
-        if (divs[i].innerHTML.substring(0, x).charAt(x-1) === " ") {
-          divs[i].innerHTML = divs[i].innerHTML.substring(0,x-1) + "...";
-          break;
-        }
-      }
+      $('div#'+event.target.id).slideUp();
     }
-  }
-}
+    return false;
+  });
+};
 
 //SliderHandler object (class)
 function SliderHandler(inTrack, inLeftArrow, inRightArrow) {
