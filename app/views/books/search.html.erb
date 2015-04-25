@@ -1,15 +1,10 @@
 <%= render 'search' %>
 
-<div class="container">
-  <div class='row'>
-    <% if !@books.empty? %>
-      <h1 class='text-center'>Search Results for: "<%= params[:search] %>"</h1>
-    <% else %>
-      <h1 class='text-center'>Nothing found for: "<%= params[:search] %>"</h1>
-    <% end %>
-  </div>
+  <% if @books.empty? %>
+    <h5 class="text-center">Nothing found for "<%= params[:search] %>"</h5>
+  <% end %>
 
-  <div class="row">
+  <div class="row pagination">
     <div class="medium-10 medium-push-4 columns">
       <p>
         <%= will_paginate renderer: FoundationPagination::Rails%>
@@ -19,22 +14,23 @@
 
     <% @books.each do |book| %>
       <div class="row">
-        <div class="medium-12 columns">
           <hr>
-          <div class="medium-2 columns">
+          <div class="small-11 small-push-1 medium-10 medium-push-2 columns"> 
+            <h3><%= link_to book.title, book_path(book), id: 'result_title'%></h3>
+          </div>
+        <div class="medium-12 columns">
+
+          <div class="small-5 medium-2 columns">
             <%= link_to image_tag("#{book.isbn}.jpg", alt: "#{book.title} Cover",
             class: "search_book_cover"), book_path(book) %>
           </div>
+          
 
-          <div class="medium-10 columns">
-            <h3><%= link_to book.title, book_path(book) %></h3>
+          <div class="small-7 medium-10 columns">
 
             <ul class="book_search_info">
-              <!-- This is just temporary for demonstration purposes -->
-              <li>by: <%= link_to book.author,
-               'http://localhost:3000/search?utf8=%E2%9C%93&search=J.K.+Rowling&commit=Search' %></li>
-              <li>Category: <%= link_to book.category,
-               'http://localhost:3000/search?utf8=%E2%9C%93&search=Science+Fiction&commit=Search' %></li>
+              <li>by <%= link_to book.author, '#' %></li>
+              <li><%= link_to book.category, '#' %></li>
             </ul>
 
             <div class="row">
@@ -51,14 +47,14 @@
               <%= book.summary %>
             </div>
 
-            <!-- Add to cart button here along with the price of the item -->
-
           </div>
+
+
         </div>
       </div>
     <% end %>
 
-    <div class="row">
+    <div class="row pagination">
       <div class="medium-10 medium-push-4 columns">
         <p>
           <%= will_paginate renderer: FoundationPagination::Rails %>
@@ -66,4 +62,3 @@
       </div>
     </div>
   </div>
-</div>

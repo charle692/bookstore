@@ -1,0 +1,80 @@
+@media screen and (min-width: 641px){
+	.slider {
+		margin: 50px 40px 50px;
+	}
+
+	.slider-container {
+		position: relative;
+		overflow: hidden;
+		height: 200px;
+	}
+
+	.slider-track {
+		position: absolute;
+		width: 3000px;
+	}
+
+	.slider-item {
+		float: left;
+		margin-right: 20px;
+	}
+
+	.slider-arrow-container {
+		background-color: gray;
+		margin-top: 12px;
+		opacity: 0.5;
+		position: absolute;
+		z-index: 4;
+		height: 175px;
+	}
+
+	.slider-arrow-container:hover {
+		opacity: 0.8;
+	}
+
+	.slider-arrow {
+		position: relative;
+		height: 50px;
+		z-index: 5;
+		top: 60px;
+	}
+
+	.slider-left-arrow {
+		left: 0px;
+	}
+
+	.slider-right-arrow {
+		right: 0px;
+	}
+
+	.book_cover {
+		margin: 12px 0 20px;
+		height: 175px;
+		webkit-transition: all 0.4s ease-in-out;
+		-moz-transition: all 0.4s ease-in-out;
+		-o-transition: all 0.4s ease-in-out;
+		transition: all 0.4s ease-in-out;
+		&:hover {
+			-webkit-transform:scale(1.05);
+	    -moz-transform:scale(1.05); 
+	    -ms-transform:scale(1.05); 
+	    -o-transform:scale(1.05);
+	    transform:scale(1.05);
+		}
+	}
+
+	.pagination {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#result_title {
+		margin-left: 8px;
+	}
+
+	.search_book_cover {
+		margin: 10px 10px 10px;
+		height: 180px;
+		width: auto;
+	}
+}

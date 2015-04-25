@@ -15,6 +15,7 @@
 	border-radius: 5px;
 }
 
+
 /* Index Page */
 .book_cover {
 	margin-right: 20px;
@@ -30,125 +31,6 @@
 	right: 0;
 }
 
-@media screen and (min-width: 641px){
-	.slider {
-		margin: 50px 40px 50px;
-	}
-
-	.slider-container {
-		position: relative;
-		overflow: hidden;
-		height: 200px;
-	}
-
-	.slider-track {
-		position: absolute;
-		width: 3000px;
-	}
-
-	.slider-item {
-		float: left;
-		margin-right: 20px;
-	}
-
-	.slider-arrow-container {
-		background-color: gray;
-		margin-top: 12px;
-		opacity: 0.5;
-		position: absolute;
-		z-index: 4;
-		height: 175px;
-	}
-
-	.slider-arrow-container:hover {
-		opacity: 0.8;
-	}
-
-	.slider-arrow {
-		position: relative;
-		height: 50px;
-		z-index: 5;
-		top: 60px;
-	}
-
-	.slider-left-arrow {
-		left: 0px;
-	}
-
-	.slider-right-arrow {
-		right: 0px;
-	}
-
-	.book_cover {
-		margin: 12px 0 20px;
-		height: 175px;
-		webkit-transition: all 0.4s ease-in-out;
-		-moz-transition: all 0.4s ease-in-out;
-		-o-transition: all 0.4s ease-in-out;
-		transition: all 0.4s ease-in-out;
-		&:hover {
-			-webkit-transform:scale(1.05);
-	    -moz-transform:scale(1.05); 
-	    -ms-transform:scale(1.05); 
-	    -o-transform:scale(1.05);
-	    transform:scale(1.05);
-		}
-	}
-}
-
-@media screen and (max-width: 640px){
-	.slider {
-		margin-left: auto;
-		margin-right: auto;
-		margin: 30px 0 30px;
-	}
-
-	.slider-container {
-		position: relative;
-		overflow: hidden;
-		height: 125px;
-		width: 100%;
-	}
-
-	.slider-track {
-		position: absolute;
-		width: 3000px;
-	}
-
-	.slider-item {
-		float: left;
-		margin-right: 20px;
-	}
-
-	.slider-arrow-container {
-		position: absolute;
-		height: 100%;
-	}
-
-	.slider-arrow-container:hover {
-		opacity: 0.8;
-	}
-
-	.slider-arrow {
-		visibility: hidden;
-	}
-
-	.slider-left-arrow {
-		left: 0px;
-	}
-
-	.slider-right-arrow {
-		right: 0px;
-	}
-
-	.book_cover {
-		height: 125px;
-	}
-
-	.category {
-		margin-left: 5px;
-	}
-}
 
 /* Show Page */
 .big_book_cover {
@@ -171,16 +53,11 @@
 }
 
 /* Search Page*/
-.search_book_cover {
-	margin: 10px 10px 10px;
-	height: 150px;
-	width: auto;
-}
-
 .book_search_info {
 	list-style-type: none;
 	margin: 0 0 10px;
 }
+
 
 /*Checkout page*/
 .checkout_book {
@@ -223,6 +100,7 @@
 	height: 100px;
 }
 
+
 /* Global */
 .price {
 	font-size: 2.1rem;
@@ -240,11 +118,4 @@ input[type="text"], textarea {
 
 .button, button {
 	border-radius: 5px;
-}
-
-ul {
-	list-style: none;
-	li {
-		margin-left: -10px;
-	}
 }

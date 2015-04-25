@@ -1,0 +1,71 @@
+@media screen and (max-width: 640px){
+	.slider {
+		margin-left: auto;
+		margin-right: auto;
+		margin: 30px 0 30px;
+	}
+
+	.slider-container {
+		position: relative;
+		overflow: hidden;
+		height: 125px;
+		width: 100%;
+	}
+
+	.slider-track {
+		position: absolute;
+		width: 3000px;
+	}
+
+	.slider-item {
+		float: left;
+		margin-right: 20px;
+	}
+
+	.slider-arrow-container {
+		position: absolute;
+		height: 100%;
+	}
+
+	.slider-arrow-container:hover {
+		opacity: 0.8;
+	}
+
+	.slider-arrow {
+		visibility: hidden;
+	}
+
+	.slider-left-arrow {
+		left: 0px;
+	}
+
+	.slider-right-arrow {
+		right: 0px;
+	}
+
+	.book_cover {
+		height: 125px;
+	}
+
+	.category {
+		margin-left: 5px;
+	}
+
+	.pagination {
+		display: none !important;
+	}
+
+	.book_summary {
+		display: none;
+	}
+
+	.price {
+		margin-top: -5px;
+	}
+
+	.search_book_cover {
+		margin: 10px 10px 10px;
+		height: 140px;
+		width: auto;
+	}
+}
