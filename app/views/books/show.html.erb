@@ -31,14 +31,15 @@
 				<div id="book_info_container">
 
 				<h2><%= @book.title %></h2>
-				<p>
-					<strong>by:</strong> <%= link_to @book.author, search_path(search: @book.author) %>
-				</p>
-
-				<p>
-					<strong>category:</strong>
-					<%= link_to @book.category, search_path(search: @book.category) %>
-				</p>
+				<ul id='show_book_info'>
+					<li>
+						<strong>by:</strong> <%= link_to @book.author, search_path(search: @book.author) %>
+					</li>
+					<li>
+						<strong>category:</strong>
+						<%= link_to @book.category, search_path(search: @book.category) %>
+					</li>
+				</ul>
 
 				<p class="price">
 					$<%= @book.price %>
