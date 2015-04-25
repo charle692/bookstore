@@ -9,28 +9,13 @@
 				<div class="medium-12 columns">
 					<h2>Product Details</h2>
 					<p>
-						<strong>Author:</strong>
-						<%= @book.author %>
-					</p>
-
-					<p>
 						<strong>Publisher:</strong>
 						<%= @book.publisher %>
 					</p>
 
 					<p>
-						<strong>Category:</strong>
-						<%= @book.category %>
-					</p>
-
-					<p>
 						<strong>ISBN:</strong>
 						<%= @book.isbn %>
-					</p>
-
-					<p>
-						<strong>Quantity Available:</strong>
-						<%= @book.quantity %>
 					</p>
 
 					<% if is_admin? %>
@@ -47,7 +32,12 @@
 
 				<h2><%= @book.title %></h2>
 				<p>
-					by <%= link_to @book.author, search_path(@book.author) %>
+					<strong>by:</strong> <%= link_to @book.author, search_path(search: @book.author) %>
+				</p>
+
+				<p>
+					<strong>category:</strong>
+					<%= link_to @book.category, search_path(search: @book.category) %>
 				</p>
 
 				<p class="price">

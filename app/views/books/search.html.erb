@@ -29,8 +29,8 @@
           <div class="small-7 medium-10 columns">
 
             <ul class="book_search_info">
-              <li>by <%= link_to book.author, '#' %></li>
-              <li><%= link_to book.category, '#' %></li>
+              <li>by <%= link_to book.author, search_path(search: book.author) %></li>
+              <li><%= link_to book.category, search_path(search: book.category) %></li>
             </ul>
 
             <div class="row">
