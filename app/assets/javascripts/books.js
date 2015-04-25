@@ -28,17 +28,19 @@ Book.setup = function() {
 };
 
 Book.search_summary = function() {
-  $('.show_summary').click(function(event) {
-    if ($('div#' + event.target.id).is(":hidden")) {
-      $('div#' + event.target.id).slideDown();
-      $('html,body').animate({
-        scrollTop: $('div#' + event.target.id).offset().top - 500
-      })
-    } else {
-      $('div#'+event.target.id).slideUp();
-    }
-    return false;
-  });
+  $('div.book_summary').each(function() {
+    $('#'+ this.id).readmore({
+      speed: 400,
+      collapsedHeight: 100,
+      afterToggle: function(trigger, element, expanded) {
+        if(expanded) { // The "Close" link was clicked
+          $('html,body').animate({
+            scrollTop: $('div#' + event.target.id).offset().top - 350
+          })
+        }
+      }
+    });
+  })
 };
 
 //SliderHandler object (class)
