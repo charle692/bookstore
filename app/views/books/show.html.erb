@@ -53,6 +53,21 @@
 		</div>
 	</div>
 
+	<% if is_admin? %>
+		<div class="row">
+			<div class="medium-2 columns">
+				<p>
+					<%= link_to 'Edit Book', edit_book_path(@book) %>
+				</p>
+			</div>
+			<div class="medium-2 medium-pull-9 columns">
+				<p>	
+					<%= link_to 'Delete Book', book_path(@book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>
+				</p>
+			</div>
+		</div>
+	<% end %>
+
 	<p>
 		<%= link_to 'Add to Cart', '#', class: 'button', id: 'add_to_cart_mobile' %>
 	</p>
@@ -68,9 +83,4 @@
 			<%= @book.summary %>
 		</div>
 	</div>
-</div>
-
-<% if is_admin? %>
-	<%= link_to 'Edit Book', edit_book_path(@book) %>
-	<%= link_to 'Delete Book', book_path(@book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>
-<% end %>
+</div>	
