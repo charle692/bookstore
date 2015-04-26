@@ -43,6 +43,13 @@ Book.search_summary = function() {
   })
 };
 
+Book.show_summary = function() {
+  $('#book_show_summary').readmore({
+    speed: 400,
+    collapsedHeight: 215
+  })
+};
+
 //SliderHandler object (class)
 function SliderHandler(inTrack, inLeftArrow, inRightArrow) {
   this.track = inTrack;
@@ -167,6 +174,7 @@ SliderHandler.prototype.hideRightSlide = function(handler) {
 Book.ready = function() {
   Book.setup();
   Book.search_summary();
+  Book.show_summary();
 }
 
 //Needed for when turbolinks isn't doing it's magic
