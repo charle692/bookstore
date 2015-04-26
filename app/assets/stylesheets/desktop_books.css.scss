@@ -1,4 +1,6 @@
 @media screen and (min-width: 641px){
+
+	/* Index Page */
 	.slider {
 		margin: 50px 40px 50px;
 	}
@@ -68,6 +70,8 @@
 		margin-right: auto;
 	}
 
+
+	/* Search Page */
 	#result_title {
 		margin-left: 8px;
 	}
@@ -78,13 +82,29 @@
 		width: auto;
 	}
 
-	.book_summary {
-		position: relative;
-		top: -10px;
-	}
 
+	/*Show Page*/
 	.show_summary {
 		position: relative; 
 		top: -10px;
+	}
+
+	#price {
+		margin-top: 10px;
+	}
+
+	#book_summary_container {
+		margin-top: 25px;
+		margin-bottom: 20px;
+		padding: 0 15px 0;
+	}
+
+	#add_to_cart_mobile {
+		display: none;
+	}
+
+	#summary_container {
+		position: relative;
+		left: 10px;
 	}
 }

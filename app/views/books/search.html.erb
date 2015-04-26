@@ -34,7 +34,7 @@
             </ul>
 
             <div class="row">
-              <div class="price medium-1 columns">
+              <div class="medium-1 columns" id="search_price">
                 $<%= book.price %>
               </div>
 
@@ -43,13 +43,17 @@
               </div>
             </div>
 
-            <%= div_for(book, class: "book_summary") do %>
-              <%= book.summary %>
-            <% end %>
+            <div id="search_summary_container">
+              <%= div_for(book, class: "book_summary") do %>
+                <%= book.summary %>
+              <% end %>
+            </div>
+
           </div>
-
-
         </div>
+
+
+
       </div>
     <% end %>
 

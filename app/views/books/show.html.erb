@@ -1,59 +1,76 @@
 <%= render 'search' %>
 
+<div class="row">
+	<div class="small-12 medium-12 columns">
+		<h2 class="text-center"><%= @book.title %></h2>
+	</div>
+</div>
+
 <div class="container">
 	<div class="row">
-		<div class="medium-4 medium-push-1 columns">
+
+		<div class="small-5 medium-4 columns">
 			<%= image_tag "#{@book.isbn}.jpg", alt: 'Book Cover', class:'big_book_cover' %>
-
-			<div class="row" id="book_properties">
-				<div class="medium-12 columns">
-					<h2>Product Details</h2>
-					<p>
-						<strong>Publisher:</strong>
-						<%= @book.publisher %>
-					</p>
-
-					<p>
-						<strong>ISBN:</strong>
-						<%= @book.isbn %>
-					</p>
-
-					<% if is_admin? %>
-						<%= link_to 'Edit Book', edit_book_path(@book) %>
-						<%= link_to 'Delete Book', book_path(@book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>
-					<% end %>
-
-				</div>
-			</div>
 		</div>
 
-		<div class="medium-8 medium-push-1 columns">
-				<div id="book_info_container">
-
-				<h2><%= @book.title %></h2>
+		<div class="small-7 medium-7 medium-pull-1 columns">
+			<div class="container">
 				<ul id='show_book_info'>
+
 					<li>
 						<strong>by:</strong> <%= link_to @book.author, search_path(search: @book.author) %>
 					</li>
-					<li>
-						<strong>category:</strong>
-						<%= link_to @book.category, search_path(search: @book.category) %>
-					</li>
+
+					<div id="book_details">
+
+						<li>
+							<strong>Category:</strong>
+							<%= link_to @book.category, search_path(search: @book.category) %>
+						</li>
+
+						<li>
+							<strong>Publisher:</strong>
+							<%= @book.publisher %>
+						</li>
+
+						<li>
+							<strong>ISBN:</strong>
+							<%= @book.isbn %>
+						</li>
+				
+					</div>
 				</ul>
 
-				<p class="price">
+				<p id="price">
 					$<%= @book.price %>
 				<p>
 
 				<p>
-					<%= link_to 'Add to Cart', '#', class: 'button' %>
+					<%= link_to 'Add to Cart', '#', class: 'button', id: 'add_to_cart_desktop' %>
 				</p>
-
-				<strong>Summary</strong>
-				<div id="book_show_summary">
-					<%= @book.summary %>
-				</div>
+				
 			</div>
 		</div>
 	</div>
+
+	<p>
+		<%= link_to 'Add to Cart', '#', class: 'button', id: 'add_to_cart_mobile' %>
+	</p>
+	
 </div>
+
+
+<div class="row">
+	<div id="book_summary_container">
+		<strong>Summary</strong>
+
+		<div id="book_show_summary">
+			<%= @book.summary %>
+		</div>
+	</div>
+</div>
+
+<% if is_admin? %>
+	<%= link_to 'Edit Book', edit_book_path(@book) %>
+	<%= link_to 'Delete Book', book_path(@book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>
+<% end %>

@@ -16,22 +16,6 @@
 }
 
 
-/* Index Page */
-.book_cover {
-	margin-right: 20px;
-	width: auto;
-}
-
-#title {
-	z-index: 2;
-	position: absolute;
-	font-size: 60px;
-	top: 250px;
-	left: 0;
-	right: 0;
-}
-
-
 /* Show Page */
 .big_book_cover {
 	-webkit-box-shadow: 0 2px 8px 0 #222;
@@ -44,13 +28,6 @@
 	height: auto;
 }
 
-#book_properties {
-	margin-top: 30px;
-}
-
-#book_info_container {
-	margin-left: 10px;
-}
 
 /* Search Page*/
 .book_search_info {
@@ -107,7 +84,7 @@
 
 
 /* Global */
-.price {
+#price, #search_price {
 	font-size: 2.1rem;
 }
 

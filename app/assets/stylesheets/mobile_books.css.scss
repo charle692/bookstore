@@ -55,17 +55,34 @@
 		display: none !important;
 	}
 
-	.book_summary {
-		display: none;
+	#price {
+		position: relative;
+		top: 20px;
 	}
 
-	.price {
-		margin-top: -5px;
-	}
-
+	/* Search Page */
 	.search_book_cover {
 		margin: 10px 10px 10px;
 		height: 140px;
 		width: auto;
+	}
+
+	#search_summary_container {
+		display: none;		
+	}
+
+	/* Show Page */
+	#book_summary_container {
+		margin: 0 5px 20px;
+	}
+
+	#add_to_cart_desktop {
+		display: none !important;
+	}
+
+	#add_to_cart_mobile {
+		margin-top: 40px;
+		margin-bottom: 0;
+		width: 100%
 	}
 }

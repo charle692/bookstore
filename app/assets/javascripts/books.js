@@ -46,7 +46,7 @@ Book.search_summary = function() {
 Book.show_summary = function() {
   $('#book_show_summary').readmore({
     speed: 400,
-    collapsedHeight: 215
+    collapsedHeight: 145
   })
 };
 
