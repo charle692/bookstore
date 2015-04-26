@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
 	helper :application
 
+	# Global Variables
 	before_action :deny_non_admins, except: [:index, :show, :search, :checkout]
+	WillPaginate.per_page = 15
 
 	def index
 		@categories = {}
