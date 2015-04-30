@@ -66,7 +66,6 @@ class BooksController < ApplicationController
 			 isbn: params[:search]},  false)
 
 		@books = @books.paginate(page: params[:page])
-		@books.per_page = 15
 	end
 
 	def checkout
