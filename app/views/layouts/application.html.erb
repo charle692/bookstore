@@ -6,7 +6,7 @@
     <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
 
     <title><%= content_for?(:title) ? yield(:title) : "Bookstore" %></title>
-    <%= javascript_include_tag "application", cache: true, defer: 'defer' %>
+    <%= javascript_include_tag "application", defer: 'defer' %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
