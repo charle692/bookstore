@@ -8,11 +8,6 @@
 }
 
 /* search */
-.search {
-	position: relative;
-	top: 11px; 
-}
-
 #search_input {
 	border-radius: 5px;
 	background: url('search_black.png') no-repeat 7px 7px;
@@ -24,8 +19,12 @@
 	padding: 0 10px 0;
 	position: relative; 
 	top: -11px;
-	left: 60px;
 	border-radius: 5px;
+}
+
+.search {
+	position: relative;
+	top: 9px;
 }
 
 
