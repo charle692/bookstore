@@ -9,7 +9,7 @@ class BooksController < ApplicationController
 		@categories = {}
 		books = Book.where deleted: false
 
-		books.each do |book|
+		books.first(100).each do |book|
 			unless @categories.has_key? book.category
 				@categories[book.category] = []
 			end

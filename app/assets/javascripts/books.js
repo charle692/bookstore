@@ -25,10 +25,14 @@ Book.show_summary = function() {
 
 Book.carousel = function() {
   $(".owl-carousel").owlCarousel({
-    margin: 20,
+    rtl: true,
     loop: true,
-    autoWidth: true,
     lazyLoad: true,
+    autoWidth: true,
+    margin: 20,
+    nav: true,
+    items: 7,
+    center: true,
   });
 };
 
