@@ -1,5 +1,5 @@
 @media screen and (max-width: 640px){
-
+	/* Index Page */
 	.book_cover {
 		height: 160px;
 	}
@@ -8,6 +8,13 @@
 		margin-left: 5px;
 	}
 
+	#search_button {
+		position: relative;
+		top: -18px;	
+	}
+
+
+	/* Search Page */
 	.pagination {
 		display: none !important;
 	}
@@ -17,7 +24,6 @@
 		top: 20px;
 	}
 
-	/* Search Page */
 	.search_book_cover {
 		margin: 10px 10px 10px;
 		height: 140px;
