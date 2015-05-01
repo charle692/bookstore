@@ -18,3 +18,7 @@ gem 'will_paginate-foundation'
 gem 'rubocop', require: false
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+
+group :production do
+  gem 'rails_12factor'
+end
