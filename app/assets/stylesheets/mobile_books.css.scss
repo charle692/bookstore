@@ -4,8 +4,17 @@
 		height: 160px;
 	}
 
+	.slider {
+		margin-top: 30px;
+		margin-bottom: 15px;
+	}
+
 	.category {
 		margin-left: 5px;
+	}
+
+	.owl-next, .owl-prev {
+		display: none !important;
 	}
 
 	#search_button {

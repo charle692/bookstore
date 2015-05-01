@@ -10,6 +10,22 @@
 		margin-right: auto;
 	}
 
+	.owl-next, .owl-prev {
+		background-color: #B5B5B5;
+		display: inline-block;
+		margin-left: 10px;
+		padding: 1px 5px 3px;
+		border-radius: 5px;
+		color: white;
+		position: relative;
+		top: 10px;
+		right: 46.8%;	
+
+		&:hover {
+			background-color: #999;
+		}
+	}
+
 
 	/* Search Page */
 	#result_title {
