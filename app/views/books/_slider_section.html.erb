@@ -1,31 +1,13 @@
 <h3 class="category"><%= label %></h3>
-<div class="slider-container">
 
-  <div class="slider-arrow-container slider-left-arrow">
-    <%= image_tag "arrow-left-icon.png",
-          id: "slider-left-arrow-#{sanitize_category(label)}",
-          class: "slider-arrow" %>
-  </div>
+<div class="owl-carousel">
+  
+  <% books.each do |book| %>
 
-  <%= content_tag :div, id: "slider-#{sanitize_category(label)}",
-    class: "slider-track" do %>
+      <%= link_to image_tag("#{book.isbn}.jpg", alt: "#{book.title} Cover",
+        class: "book_cover"), book_path(book) %>
 
-    <% books.each do |book| %>
+  <% end #ends books.each %>
 
-      <div class="slider-item">
-
-        <%= link_to image_tag("#{book.isbn}.jpg", alt: "#{book.title} Cover",
-          class: "book_cover"), book_path(book) %>
-
-      </div>
-
-    <% end #ends books.each %>
-
-  <% end #ends div slider track tag %>
-
-  <div class="slider-arrow-container slider-right-arrow">
-    <%= image_tag "arrow-right-icon.png",
-          id: "slider-right-arrow-#{sanitize_category(label)}",
-          class: "slider-arrow" %>
-  </div>
 </div>
+

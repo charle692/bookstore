@@ -1,68 +1,15 @@
 @media screen and (min-width: 641px){
 
 	/* Index Page */
+	.book_cover {	
+		height: 260px;
+	}
+
 	.slider {
-		margin: 50px 40px 50px;
-	}
-
-	.slider-container {
-		position: relative;
-		overflow: hidden;
-		height: 200px;
-	}
-
-	.slider-track {
-		position: absolute;
-		width: 3000px;
-	}
-
-	.slider-item {
-		float: left;
-		margin-right: 20px;
-	}
-
-	.slider-arrow-container {
-		background-color: gray;
-		margin-top: 12px;
-		opacity: 0.5;
-		position: absolute;
-		z-index: 4;
-		height: 175px;
-	}
-
-	.slider-arrow-container:hover {
-		opacity: 0.8;
-	}
-
-	.slider-arrow {
-		position: relative;
-		height: 50px;
-		z-index: 5;
-		top: 60px;
-	}
-
-	.slider-left-arrow {
-		left: 0px;
-	}
-
-	.slider-right-arrow {
-		right: 0px;
-	}
-
-	.book_cover {
-		margin: 12px 0 20px;
-		height: 175px;
-		webkit-transition: all 0.4s ease-in-out;
-		-moz-transition: all 0.4s ease-in-out;
-		-o-transition: all 0.4s ease-in-out;
-		transition: all 0.4s ease-in-out;
-		&:hover {
-			-webkit-transform:scale(1.05);
-	    -moz-transform:scale(1.05); 
-	    -ms-transform:scale(1.05); 
-	    -o-transform:scale(1.05);
-	    transform:scale(1.05);
-		}
+		margin-top: 50px;
+		width: 97%;
+		margin-right: auto;
+		margin-left: auto;
 	}
 
 	.pagination {
