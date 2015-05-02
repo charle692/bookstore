@@ -3,75 +3,70 @@
 <% end %>
 
 <div class="row pagination">
-  <div class="medium-10 medium-push-4 columns">
-    <p>
-      <%= will_paginate renderer: FoundationPagination::Rails%>
-    </p>
-  </div>
+  <p>
+    <%= will_paginate renderer: FoundationPagination::Rails%>
+  </p>
 </div>
 
-  <% @books.each do |book| %>
-    <div class="row">
-        <hr>
-        <div class="small-11 small-push-1 medium-10 medium-push-2 columns"> 
-          <h3><%= link_to book.title, book_path(book), id: 'result_title'%></h3>
-        </div>
-      <div class="medium-12 columns">
+<% @books.each do |book| %>
+  <div class="row">
+      <hr>
+      <div class="small-11 small-push-1 medium-10 medium-push-2 columns"> 
+        <h3><%= link_to book.title, book_path(book), id: 'result_title'%></h3>
+      </div>
+    <div class="medium-12 columns">
 
-        <div class="small-5 medium-2 columns">
-          <%= link_to image_tag("#{book.isbn}.jpg", alt: "#{book.title} Cover",
-          class: "search_book_cover"), book_path(book) %>
-        </div>
-        
+      <div class="small-5 medium-2 columns">
+        <%= link_to image_tag("#{book.isbn}.jpg", alt: "#{book.title} Cover",
+        class: "search_book_cover"), book_path(book) %>
+      </div>
+      
 
-        <div class="small-7 medium-10 columns">
+      <div class="small-7 medium-10 columns">
 
-          <ul class="book_search_info">
-            <li>by <%= link_to book.author, search_path(search: book.author) %></li>
-            <li><%= link_to book.category, search_path(search: book.category) %></li>
-          </ul>
+        <ul class="book_search_info">
+          <li>by <%= link_to book.author, search_path(search: book.author) %></li>
+          <li><%= link_to book.category, search_path(search: book.category) %></li>
+        </ul>
 
-          <div class="row">
-            <div class="medium-1 columns" id="search_price">
-              $<%= book.price %>
-            </div>
-
-            <div class="medium-4 medium-pull-6 columns">
-              <%= link_to 'Add to Cart', '#', class: 'button small' %>
-            </div>
+        <div class="row">
+          <div class="medium-1 columns" id="search_price">
+            $<%= book.price %>
           </div>
 
-          <div id="search_summary_container">
-            <%= div_for(book, class: "book_summary") do %>
-              <%= book.summary %>
-            <% end %>
+          <div class="medium-4 medium-pull-6 columns">
+            <%= link_to 'Add to Cart', '#', class: 'button small' %>
           </div>
-
         </div>
+
+        <div id="search_summary_container">
+          <%= div_for(book, class: "book_summary") do %>
+            <%= book.summary %>
+          <% end %>
+        </div>
+
       </div>
-    </div>
-
-    <% if is_admin? %>
-      <div class="row">
-        <div class="small-6 medium-2 columns">
-          <p>
-            <%= link_to 'Edit Book', edit_book_path(book) %>
-          </p>
-        </div>
-        <div class="small-6 medium-2 small-pull-1 medium-pull-9 columns">
-          <p> 
-            <%= link_to 'Delete Book', book_path(book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>
-          </p>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-
-  <div class="row pagination">
-    <div class="medium-10 medium-push-4 columns">
-      <p>
-        <%= will_paginate renderer: FoundationPagination::Rails %>
-      </p>
     </div>
   </div>
+
+  <% if is_admin? %>
+    <div class="row">
+      <div class="small-6 medium-2 columns">
+        <p>
+          <%= link_to 'Edit Book', edit_book_path(book) %>
+        </p>
+      </div>
+      <div class="small-6 medium-2 small-pull-1 medium-pull-9 columns">
+        <p> 
+          <%= link_to 'Delete Book', book_path(book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="row pagination">
+  <p>
+    <%= will_paginate renderer: FoundationPagination::Rails %>
+  </p>
 </div>
