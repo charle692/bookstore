@@ -1,0 +1,14 @@
+<% if is_admin? %>
+  <div class="row">
+    <div class="small-6 medium-2 columns">
+      <p>
+        <%= link_to 'Edit Book', edit_book_path(book) %>
+      </p>
+    </div>
+    <div class="small-6 medium-2 small-pull-1 medium-pull-9 columns">
+      <p> 
+        <%= link_to 'Delete Book', book_path(book), method: :delete, data: { confirm: "Are you sure you want to remove this book?"} %>
+      </p>
+    </div>
+  </div>
+<% end %>
