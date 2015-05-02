@@ -15,42 +15,42 @@
 
 	<p>
 		<%= f.label :title %>
-		<%= f.text_field :title %>
+		<%= f.text_field :title, title: 'The book title.' %>
 	</p>
 
 	<p>
 		<%= f.label :author %>
-		<%= f.text_field :author %>
+		<%= f.text_field :author, title: 'The author\'s name' %>
 	</p>
 
 	<p>
 		<%= f.label :price %>
-		<%= f.text_field :price %>
+		<%= f.text_field :price, title: 'The book\'s price.' %>
 	</p>
 
 	<p>
 		<%= f.label :publisher %>
-		<%= f.text_field :publisher %>
+		<%= f.text_field :publisher, title: 'The book\'s publisher.' %>
 	</p>
 
 	<p>
 		<%= f.label :category %>
-		<%= f.text_field :category %>
+		<%= f.text_field :category, title: 'The book type/genre.' %>
 	</p>
 
 	<p>
 		<%= f.label :isbn %>
-		<%= f.text_field :isbn %>
+		<%= f.text_field :isbn, title: 'The book ISBN.' %>
 	</p>
 
 	<p>
 		<%= f.label :quantity %>
-		<%= f.text_field :quantity %>
+		<%= f.text_field :quantity, title: 'The quantity of books available.' %>
 	</p>
 
 	<p>
 		<%= f.label :summary %>
-		<%= f.text_area :summary , id: "book_summary"%>
+		<%= f.text_area :summary , id: "book_summary", title: 'The book summary.' %>
 	</p>
 
 	<p>
