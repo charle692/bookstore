@@ -28,10 +28,10 @@ Book.carousel = function() {
     rtl: true,
     loop: true,
     lazyLoad: true,
-    autoWidth: true,
+    // autoWidth: true,
     margin: 20,
     nav: true,
-    items: 7,
+    items: 10,
     center: true,
   });
 };
@@ -45,5 +45,5 @@ Book.ready = function() {
 //Needed for when turbolinks isn't doing it's magic
 $(document).ready(Book.ready);
 
-//Needed for when turbolinks is doing it's magic 
+//Needed for when turbolinks is doing it's magic
 $(document).on('page:load', Book.ready);
