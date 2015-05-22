@@ -1,7 +1,24 @@
-class Book < ActiveRecord::Base
-	# Makes sure that both an isbn and quantity are entered
-	validates :isbn, :quantity, :title, :author, :price, :category, presence: true 
-	validate :isbn_length
+class Book < ActiveRecord::Base  
+  validates :price, presence: true, format: {
+   with: /\A\d+(\.\d{2})\z/,
+   message: 'must be of the following format: ##.##'
+  }
+
+  validates :quantity, presence: true, numericality: {
+   only_integer: true,
+   message: 'can only be a number'
+  }
+
+  validates :category, presence: true, format: {
+   with: /\A[a-zA-Z]+\z/, message: 'can only be made of letters'
+  }
+
+  validates :title, :author, :summary, presence: true, format: {
+    with: /\A(\w|\s|\p{Punct})+\z/, 
+    message: 'can only contain alphanumeric characters, spaces, and punctuation'
+  }
+
+  validate :isbn_length
 
 	private
 	def isbn_length
