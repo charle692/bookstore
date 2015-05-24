@@ -35,7 +35,21 @@
 
 	<p>
 		<%= f.label :category %>
-		<%= f.text_field :category, title: 'The book type/genre.' %>
+		<%= f.select :category, options_for_select(
+			[['Fiction & Literature', 1],
+			 ['Non-fiction', 2],
+			  ['Romance', 3],
+			   ['Science Fiction', 4],
+			    ['History', 5],
+			     ['Science and Nature', 6],
+			      ['Mystery and Suspense', 7],
+			       ['Sports', 8],
+			        ['Travel', 9],
+			         ['Biography', 10],
+			          ['Reference and Language', 11],
+			           ['Health and Well Being', 12],
+			            ['Business and Finance', 13],
+			             ['Kids', 14]],1) %>
 	</p>
 
 	<p>

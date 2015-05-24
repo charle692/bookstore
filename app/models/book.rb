@@ -10,11 +10,11 @@ class Book < ActiveRecord::Base
   }
 
   validates :category, presence: true, format: {
-    with: /\A([a-zA-Z]|\s)+\z/, message: 'can only be made of letters'
+    with: /\A([a-zA-Z]|\p{Blank}|\W)+\z/, message: 'can only be made of letters'
   }
 
   validates :title, :author, :summary, presence: true, format: {
-    with: /\A(\w|\s|\p{Punct})+\z/,
+    with: /\A(\w|\s|\p{Punct}|\W)+\z/,
     message: 'can only contain alphanumeric characters, spaces, and punctuation'
   }
 

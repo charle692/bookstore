@@ -51,7 +51,7 @@ au.add_role(a)
     title: 'The Chicago Manual of Style',
     author: 'University of Chicago Press Staff',
     publisher: 'University of Chicago Press',
-    category: 'Education',
+    category: 'Reference and Language',
     deleted: 'false',
     price: 6.50,
     summary: 'Those who work with words know how
@@ -136,7 +136,7 @@ au.add_role(a)
     quantity: 2,
     title: 'Harry Potter and the Prisoner of Azkaban',
     author: 'J.K. Rowling',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     publisher: 'Scholastic',
     deleted: 'false',
     price: 15.75,
@@ -175,7 +175,7 @@ au.add_role(a)
     title: 'Harry Potter and the Goblet of Fire',
     author: 'J.K. Rowling',
     publisher: 'Scholastic',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     deleted: 'false',
     price: 15.75,
     summary: 'In Harry
@@ -212,7 +212,7 @@ au.add_role(a)
     title: 'Harry Potter and the Order of the Phoenix',
     author: 'J.K. Rowling',
     publisher: 'Scholastic',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     deleted: 'false',
     price: 15.75,
     summary: 'In
@@ -250,7 +250,7 @@ au.add_role(a)
     title: 'Harry Potter and the Chamber of Secrets',
     author: 'J.K. Rowling',
     publisher: 'Scholastic',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     deleted: 'false',
     price: 15.75,
     summary: 'In Harry Potter and the Chamber of Secrets, the summer after
@@ -286,7 +286,7 @@ au.add_role(a)
     title: 'Harry Potter and the Half-Blood Prince',
     author: 'J.K. Rowling',
     publisher: 'Scholastic',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     deleted: 'false',
     price: 15.75,
     summary: 'When Harry Potter and the Half-Blood Prince opens, the war against
@@ -325,7 +325,7 @@ au.add_role(a)
     title: 'Holes',
     author: 'Louis Sachar',
     publisher: 'Yearling',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     deleted: 'false',
     price: 5.75,
     summary: 'Stanley Yelnats is under a curse. A curse that began with his
@@ -349,7 +349,7 @@ au.add_role(a)
     title: 'The Tales of Beedle the Bard',
     author: 'J.K. Rowling',
     publisher: 'Pottermore',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     deleted: 'false',
     price: 15.75,
     summary: 'THE TALES OF BEEDLE THE BARD, a Wizarding classic, first came to
@@ -372,7 +372,7 @@ au.add_role(a)
     title: 'Lord of the Rings - The Two Towers',
     author: 'J.R.R. Tolkien',
     publisher: 'Mariner Books',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     deleted: 'false',
     price: 12.25,
     summary: 'Frodo and his Companions of the Ring have been beset by danger
@@ -392,7 +392,7 @@ au.add_role(a)
     title: 'Lord of the Rings - Fellowship of the Ring',
     author: 'J.R.R. Tolkien',
     publisher: 'Recorded Books',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     deleted: 'false',
     price: 12.25,
     summary: 'Frodo Baggins and his companion Sam Gamgee, set off along thesame
@@ -407,7 +407,7 @@ au.add_role(a)
     title: 'The Lord of the Rings',
     author: 'J.R.R. Tolkien',
     publisher: 'Houghton Mifflin',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     deleted: 'false',
     price: 12.25,
     summary: 'One Ring to rule them all, One Ring to find them, One Ring to bring
@@ -437,7 +437,7 @@ au.add_role(a)
     title: 'Great Books',
     author: 'David Denby',
     publisher: 'Simon & Schuster',
-    category: 'Fiction',
+    category: 'Fiction & Literature',
     deleted: 'false',
     price: 12.25,
     summary: 'At the age of forty-eight, writer and film critic David Denby
