@@ -13,13 +13,13 @@ au.add_role(a)
 20.times do
   Book.new(
   isbn: '0151957479',
-  quantity: '2',
+  quantity: 2,
   title: 'The Western Canon: The Books and School of the Ages',
   author: 'Harold Bloom',
   publisher: 'Houghton Mifflin Harcourt',
   category: 'History',
   deleted: 'false',
-  price: '5.00',
+  price: 5.00,
   summary: 'Harold Bloom explores our Western
   literary tradition by concentrating on the works of twenty-six authors
   central to the Canon. He argues against ideology in literary criticism;
@@ -39,17 +39,17 @@ au.add_role(a)
   of an originality fused with tradition. Bloom concludes this
   provocative, trenchant work with a complete list of
   essential writers and books - his vision of the Canon.'
-  ).save
+  ).save!
 
   Book.new(
   isbn: '0226104036',
-  quantity: '2',
+  quantity: 2,
   title: 'The Chicago Manual of Style',
   author: 'University of Chicago Press Staff',
   publisher: 'University of Chicago Press',
   category: 'Education',
   deleted: 'false',
-  price: '6.50',
+  price: 6.50,
   summary: 'Those who work with words know how
   dramatically publishing has changed in the past decade, with technology now
   informing and influencing every stage of the writing and publishing
@@ -90,17 +90,17 @@ au.add_role(a)
   words, whether on a page or computer
   screen, this continues to be the one
   reference book you simply must have.'
-  ).save
+  ).save!
 
   Book.new(
   isbn: '0345307675',
-  quantity: '2',
+  quantity: 2,
   title: 'Star Wars: Return of the Jedi',
   author: 'Goerge Lucas',
   publisher: 'LucasBooks',
   category: 'Science Fiction',
   deleted: 'false',
-  price: '15.00',
+  price: 15.00,
   summary: 'It was a
   dark time for the rebel alliance...Han Solo, frozen in carbonite, had been
   delivered into the hands of the vile gangster Jabba the Hutt. Determined to
@@ -109,31 +109,31 @@ au.add_role(a)
   commanders gathered all the warships of the Rebel fleet into a single
   giant armada. And Darth Vader and the Emperor, who had ordered
   construction to begin on a new and even more powerful Death Star, were
-  making plans to crush the Rebel Alliance once and for all.').save
+  making plans to crush the Rebel Alliance once and for all.').save!
 
   Book.new(
   isbn: '0345341465',
-  quantity: '2',
+  quantity: 2,
   title: 'Star Wars: A New Hope',
   author: 'George Lucas',
   publisher: 'LucasBooks',
   category: 'Science Fiction',
   deleted: 'false',
-  price: '15.00',
+  price: 15.00,
   summary: 'Luke Skywalker was a twenty-year-old who lived and worked on his
   uncle\'s farm on the remote planet of Tatooine... and he was bored beyond
   belief. He yearned for adventures that would take him beyond the farthest
-  galaxies. But he got much more than he bargained for...').save
+  galaxies. But he got much more than he bargained for...').save!
 
   Book.new(
   isbn: '0439136369',
-  quantity: '2',
+  quantity: 2,
   title: 'Harry Potter and the Prisoner of Azkaban',
   author: 'J.K. Rowling',
   category: 'Fiction',
   publisher: 'Scholastic',
   deleted: 'false',
-  price: '15.75',
+  price: 15.75,
   summary: 'For twelve long years, the dread fortress of Azkaban held an
   infamous prisoner named Sirius Black. Convicted of killing thirteen people
   with a single curse, he was said to be the heir apparent to the Dark Lord,
@@ -160,17 +160,17 @@ au.add_role(a)
   age. But even with his broom, his map, his magic, and
   his loyal friends, Harry isn\'t safe. Because on top
   of everything else, there\'s a traitor hidden at
-  Hogwarts...').save
+  Hogwarts...').save!
 
   Book.new(
   isbn: '0439139600',
-  quantity: '2',
+  quantity: 2,
   title: 'Harry Potter and the Goblet of Fire',
   author: 'J.K. Rowling',
   publisher: 'Scholastic',
   category: 'Fiction',
   deleted: 'false',
-  price: '15.75',
+  price: 15.75,
   summary: 'In Harry
   Potter and the Goblet of Fire, Harry is midway through both his training as a
   wizard and his coming of age. He wants to get away from the malicious
@@ -196,17 +196,17 @@ au.add_role(a)
   necessary for his rejuvenation... and he has a faithful
   servant at Hogwarts waiting only for a sign. No,
   nothing is ever normal for Harry Potter. And in his
-  case, different can be deadly.').save
+  case, different can be deadly.').save!
 
   Book.new(
   isbn: '0439358078',
-  quantity: '2',
+  quantity: 2,
   title: 'Harry Potter and the Order of the Phoenix',
   author: 'J.K. Rowling',
   publisher: 'Scholastic',
   category: 'Fiction',
   deleted: 'false',
-  price: '15.75',
+  price: 15.75,
   summary: 'In
   Harry Potter and the Order of the Phoenix, Lord Voldemort has returned to the
   Wizarding world, presenting a threat that neither the magical government nor
@@ -233,17 +233,17 @@ au.add_role(a)
   can\'t dispel the gathering darkness. Soon Harry will
   discover the true depth and strength of his friends;
   their boundless loyalty and unbearable sacrifices. His
-  fate depends on them all.').save
+  fate depends on them all.').save!
 
   Book.new(
   isbn: '0439064872',
-  quantity: '2',
+  quantity: 2,
   title: 'Harry Potter and the Chamber of Secrets',
   author: 'J.K. Rowling',
   publisher: 'Scholastic',
   category: 'Fiction',
   deleted: 'false',
-  price: '15.75',
+  price: 15.75,
   summary: 'In Harry Potter and the Chamber of Secrets, the summer after
   Harry\'s first year at Hogwarts has been his worst summer ever… the Dursleys
   more distant and horrible than ever before. But just as he\'s packing his
@@ -268,17 +268,17 @@ au.add_role(a)
   Harry\'s most poisonous rival? Could it be Hagrid whose
   mysterious past is finally told? Or could it be the one
   person everyone at Hogwarts most suspects: Harry
-  Potter himself?').save
+  Potter himself?').save!
 
   Book.new(
   isbn: '0439785960',
-  quantity: '2',
+  quantity: 2,
   title: 'Harry Potter and the Half-Blood Prince',
   author: 'J.K. Rowling',
   publisher: 'Scholastic',
   category: 'Fiction',
   deleted: 'false',
-  price: '15.75',
+  price: 15.75,
   summary: 'When Harry Potter and the Half-Blood Prince opens, the war against
   Voldemort has begun. The Wizarding world has split down the middle, and as
   the casualties mount, the effects even spill over onto the Muggles.
@@ -306,17 +306,17 @@ au.add_role(a)
   Dumbledore hold the key to the Dark Lord\'s
   weaknesses... until a shocking reversal exposes
   Dumbledore\'s own vulnerabilities, and casts
-  Harry\'s—and Hogwarts\'s—future in shadow.').save
+  Harry\'s—and Hogwarts\'s—future in shadow.').save!
 
   Book.new(
   isbn: '0440414806',
-  quantity: '2',
+  quantity: 2,
   title: 'Holes',
   author: 'Louis Sachar',
   publisher: 'Yearling',
   category: 'Fiction',
   deleted: 'false',
-  price: '5.75',
+  price: 5.75,
   summary: 'Stanley Yelnats is under a curse. A curse that began with his
   no-good-dirty-rotten-pig-stealing-great-great-grandfather and has since
   followed generations of Yelnatses. Now Stanley has been unjustly sent
@@ -329,17 +329,17 @@ au.add_role(a)
   warden is looking for something. But what could be buried under
   a dried-up lake? Stanley tries to dig up the truth in this
   inventive and darkly humorous tale of crime and punishment—
-  and redemption.').save
+  and redemption.').save!
 
   Book.new(
   isbn: '0545128285',
-  quantity: '2',
+  quantity: 2,
   title: 'The Tales of Beedle the Bard',
   author: 'J.K. Rowling',
   publisher: 'Pottermore',
   category: 'Fiction',
   deleted: 'false',
-  price: '15.75',
+  price: 15.75,
   summary: 'THE TALES OF BEEDLE THE BARD, a Wizarding classic, first came to
   Muggle readers\' attention in the book known as HARRY POTTER
   AND THE DEATHLY HALLOWS. Now, thanks to Hermione Granger\'s new translation
@@ -351,17 +351,17 @@ au.add_role(a)
   Rabbitty and Her Cackling Stump," and of course, "The Tale of the
   Three Brothers." But not only are they the equal of fairy tales we
   now know and love, reading them gives new insight into the world of
-  Harry Potter.').save
+  Harry Potter.').save!
 
   Book.new(
   isbn: '0547928203',
-  quantity: '2',
+  quantity: 2,
   title: 'Lord of the Rings - The Two Towers',
   author: 'J.R.R. Tolkien',
   publisher: 'Mariner Books',
   category: 'Fiction',
   deleted: 'false',
-  price: '12.25',
+  price: 12.25,
   summary: 'Frodo and his Companions of the Ring have been beset by danger
   during their quest to prevent the Ruling Ring from falling into the hands of
   the Dark Lord by destroying it in the Cracks of Doom. They have lost the
@@ -370,31 +370,31 @@ au.add_role(a)
   made their escape, the rest of the company was attacked by Orcs. Now
   they continue the journey alone down the great River Anduin -- alone,
   that is, save for the mysterious creeping figure that follows wherever
-  they go.').save
+  they go.').save!
 
   Book.new(
   isbn: '0547928211',
-  quantity: '2',
+  quantity: 2,
   title: 'Lord of the Rings - Fellowship of the Ring',
   author: 'J.R.R. Tolkien',
   publisher: 'Recorded Books',
   category: 'Fiction',
   deleted: 'false',
-  price: '12.25',
+  price: 12.25,
   summary: 'Frodo Baggins and his companion Sam Gamgee, set off along thesame
   road down which Bilbo the Hobbit had accompanied Thorin Oakenshield and
   his dwarves all those years ago. Much danger and many strange encounters
-  await them.').save
+  await them.').save!
 
   Book.new(
   isbn: '0618640150',
-  quantity: '2',
+  quantity: 2,
   title: 'The Lord of the Rings',
   author: 'J.R.R. Tolkien',
   publisher: 'Houghton Mifflin',
   category: 'Fiction',
   deleted: 'false',
-  price: '12.25',
+  price: 12.25,
   summary: 'One Ring to rule them all, One Ring to find them, One Ring to bring
   them all and in the darkness bind them. In ancient times the Rings of Power
   were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One
@@ -413,17 +413,17 @@ au.add_role(a)
   the Fellowship of the Ring: Gandalf the Wizard; the hobbits
   Merry, Pippin, and Sam; Gimli the Dwarf; Legolas the Elf;
   Boromir of Gondor; and a tall, mysterious stranger called
-  Strider.').save
+  Strider.').save!
 
   Book.new(
   isbn: '0684835339',
-  quantity: '2',
+  quantity: 2,
   title: 'Great Books',
   author: 'David Denby',
   publisher: 'Simon & Schuster',
   category: 'Fiction',
   deleted: 'false',
-  price: '12.25',
+  price: 12.25,
   summary: 'At the age of forty-eight, writer and film critic David Denby
   returned to Columbia University and re-enrolled in two core courses in
   Western civilization to confront the literary and philosophical
@@ -433,5 +433,5 @@ au.add_role(a)
   Locke and Nietzsche. Conrad and Woolf. The resulting personal odyssey
   is an engaging blend of self-discovery, cultural commentary,
   reporting, criticism, and autobiography -- an inspiration for anyone
-  in love with the written word.').save
+  in love with the written word.').save!
 end

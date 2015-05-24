@@ -28,10 +28,10 @@ Book.carousel = function() {
     rtl: true,
     loop: true,
     lazyLoad: true,
-    // autoWidth: true,
+    autoWidth: true,
     margin: 20,
     nav: true,
-    items: 10,
+    items: 5,
     center: true,
   });
 };

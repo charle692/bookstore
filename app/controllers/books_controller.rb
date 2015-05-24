@@ -69,7 +69,7 @@ class BooksController < ApplicationController
 	end
 
 	def checkout
-		@first_book = Book.where title: 'Star Wars: A New Hope'
+		@first_book = Book.where title: 'The Chicago Manual of Style'
 		@second_book = Book.where title: 'The Chicago Manual of Style'
 	end
 

@@ -1,6 +1,6 @@
 class Book < ActiveRecord::Base  
   validates :price, presence: true, format: {
-   with: /\A\d+(\.\d{2})\z/,
+   with: /\A\d+(\.\d{1,2})\z/,
    message: 'must be of the following format: ##.##'
   }
 
@@ -10,7 +10,7 @@ class Book < ActiveRecord::Base
   }
 
   validates :category, presence: true, format: {
-   with: /\A[a-zA-Z]+\z/, message: 'can only be made of letters'
+   with: /\A([a-zA-Z]|\s)+\z/, message: 'can only be made of letters'
   }
 
   validates :title, :author, :summary, presence: true, format: {
