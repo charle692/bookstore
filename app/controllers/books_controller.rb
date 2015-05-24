@@ -10,7 +10,7 @@ class BooksController < ApplicationController
 		books = Book.where deleted: false
 
 		books.first(100).each do |book|
-			unless @categories.has_key? book.category
+			unless @categories.key? book.category
 				@categories[book.category] = []
 			end
 
@@ -34,7 +34,7 @@ class BooksController < ApplicationController
 		@book = Book.new(book_params)
 
 		if book2 = Book.find_by(isbn: @book.isbn)
-			book2.update_attribute "quantity", book2.quantity + @book.quantity
+			book2.update_attribute 'quantity', book2.quantity + @book.quantity
 			redirect_to book2
 		else
 			save_book @book
@@ -73,12 +73,11 @@ class BooksController < ApplicationController
 		@second_book = Book.where title: 'The Chicago Manual of Style'
 	end
 
-	private
+		private
 
 	def deny_non_admins
-		if !current_user || !current_user.is_role_by_name?('admin')
-			redirect_to root_path
-		end
+		return false if !current_user || !current_user.is_role_by_name?('admin')
+		redirect_to root_path
 	end
 
 	def book_params

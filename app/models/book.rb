@@ -14,16 +14,16 @@ class Book < ActiveRecord::Base
   }
 
   validates :title, :author, :summary, presence: true, format: {
-    with: /\A(\w|\s|\p{Punct})+\z/, 
+    with: /\A(\w|\s|\p{Punct})+\z/,
     message: 'can only contain alphanumeric characters, spaces, and punctuation'
   }
 
   validate :isbn_length
 
-	private
+	  private
+
 	def isbn_length
-		unless isbn.size == 10 or isbn.size == 13
-			errors.add(:isbn, "numbers must be 10 or 13 characters long #{isbn}")
-		end
+    return false if isbn.size != 10 || isbn.size != 13
+		errors.add(:isbn, "numbers must be 10 or 13 characters long #{isbn}")
 	end
 end

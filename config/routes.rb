@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  
   root 'books#index'
   get 'help'    => 'static_pages#help'
   get 'checkout' => 'books#checkout'
