@@ -1,16 +1,16 @@
 class Book < ActiveRecord::Base  
-  validates :price, presence: true, format: {
-   with: /\A\d+(\.\d{1,2})\z/,
-   message: 'must be of the following format: ##.##'
+  validates :price, presence: true, numericality: {
+    only_float: true,
+    message: 'must be of the following format: ##.##'
   }
 
   validates :quantity, presence: true, numericality: {
-   only_integer: true,
-   message: 'can only be a number'
+    only_integer: true,
+    message: 'can only be a number'
   }
 
   validates :category, presence: true, format: {
-   with: /\A([a-zA-Z]|\s)+\z/, message: 'can only be made of letters'
+    with: /\A([a-zA-Z]|\s)+\z/, message: 'can only be made of letters'
   }
 
   validates :title, :author, :summary, presence: true, format: {
@@ -23,7 +23,8 @@ class Book < ActiveRecord::Base
 	  private
 
 	def isbn_length
-    return false if isbn.size != 10 || isbn.size != 13
-		errors.add(:isbn, "numbers must be 10 or 13 characters long #{isbn}")
+    unless isbn.size == 10 || isbn.size == 13
+  		errors.add(:isbn, "numbers must be 10 or 13 characters long #{isbn}")
+    end
 	end
 end

@@ -76,7 +76,7 @@ class BooksController < ApplicationController
 		private
 
 	def deny_non_admins
-		return false if !current_user || !current_user.is_role_by_name?('admin')
+		return false if current_user || current_user.is_role_by_name?('admin')
 		redirect_to root_path
 	end
 
