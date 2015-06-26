@@ -19,6 +19,13 @@ gem 'rubocop', require: false
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'factory_girl_rails'
+  gem 'pry'
+end
+
 group :production do
   gem 'rails_12factor'
   gem 'heroku-deflater'

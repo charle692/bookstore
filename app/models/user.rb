@@ -1,20 +1,18 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
    :rememberable, :trackable, :validatables
 
   has_and_belongs_to_many :roles
 
 
-  def add_role(role) 
+  def add_role(role)
     self.roles << role
   end
 
   def add_role_by_name(role_name)
     role = Role.find_by(name: role_name)
     self.roles << role
-  end 
+  end
 
   def is_role?(role)
     self.roles.include?(role)
