@@ -9,11 +9,6 @@ class Book < ActiveRecord::Base
     message: 'can only be a number'
   }
 
-  validates :category, presence: true, format: {
-    with: /\A([a-zA-Z]|\p{Blank}|\W)+\z/,
-    message: 'can only be made of letters'
-  }
-
   validates :title, :author, :publisher, :summary, presence: true, format: {
     with: /\A(\w|\s|\p{Punct}|\W)+\z/,
     message: 'can\'t contain special characters'

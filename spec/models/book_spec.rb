@@ -1,16 +1,10 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Book do
+RSpec.describe Book, type: :model do
   it 'is invalid without a title' do
     book = build(:book, title: nil)
     book.valid?
     expect(book.errors[:title].size).to eq(2)
-  end
-
-  it 'is invalid without a category' do
-    book = build(:book, category: nil)
-    book.valid?
-    expect(book.errors[:category].size).to eq(2)
   end
 
   it 'is invalid without a author' do
