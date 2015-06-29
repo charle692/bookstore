@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  belongs_to :category
+
   validates :price, presence: true, numericality: {
     only_float: true,
     message: 'must be of the following format: ##.##'

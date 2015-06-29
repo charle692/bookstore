@@ -1,6 +1,9 @@
 Book.all.delete_all
 User.all.each(&:destroy)
 Role.all.each(&:destroy)
+Category.delete_all
+books = Array.new(100)
+categories = Array.new(5)
 
 a = Role.new(name: 'admin')
 a.save
@@ -14,14 +17,22 @@ au = User.new(
 au.save
 au.add_role(a)
 
-20.times do
-  Book.new(
-    isbn: '0151957479',
+# Categories
+categories[0] = Category.new(name: 'Fiction &   Literature')
+categories[1] = Category.new(name: 'History')
+categories[2] = Category.new(name: 'Reference and Language')
+categories[3] = Category.new(name: 'Science Fiction')
+categories[4] = Category.new(name: 'Non Fiction')
+
+# Books
+count = 0
+for i in 0..20
+  books[count] = Book.new(
+    isbn: '015195747-9',
     quantity: 2,
     title: 'The Western Canon: The Books and School of the Ages',
     author: 'Harold Bloom',
     publisher: 'Houghton Mifflin Harcourt',
-    category: 'History',
     deleted: 'false',
     price: 5.00,
     summary: 'Harold Bloom explores our Western
@@ -42,16 +53,15 @@ au.add_role(a)
     Pessoa are exquisite examples of how canonical writing is born
     of an originality fused with tradition. Bloom concludes this
     provocative, trenchant work with a complete list of
-    essential writers and books - his vision of the Canon.'
-  ).save!
+    essential writers and books - his vision of the Canon.')
 
-  Book.new(
-    isbn: '0226104036',
+  count+=1
+  books[count] = Book.new(
+    isbn: '022610403-6',
     quantity: 2,
     title: 'The Chicago Manual of Style',
     author: 'University of Chicago Press Staff',
     publisher: 'University of Chicago Press',
-    category: 'Reference and Language',
     deleted: 'false',
     price: 6.50,
     summary: 'Those who work with words know how
@@ -93,16 +103,15 @@ au.add_role(a)
     perspectives. For anyone who works with
     words, whether on a page or computer
     screen, this continues to be the one
-    reference book you simply must have.'
-  ).save!
+    reference book you simply must have.')
 
-  Book.new(
-    isbn: '0345307675',
+  count+=1
+  books[count] = Book.new(
+    isbn: '034530767-5',
     quantity: 2,
     title: 'Star Wars: Return of the Jedi',
     author: 'Goerge Lucas',
     publisher: 'LucasBooks',
-    category: 'Science Fiction',
     deleted: 'false',
     price: 15.00,
     summary: 'It was a
@@ -113,30 +122,28 @@ au.add_role(a)
     commanders gathered all the warships of the Rebel fleet into a single
     giant armada. And Darth Vader and the Emperor, who had ordered
     construction to begin on a new and even more powerful Death Star, were
-    making plans to crush the Rebel Alliance once and for all.'
-  ).save!
+    making plans to crush the Rebel Alliance once and for all.')
 
-  Book.new(
-    isbn: '0345341465',
+  count+=1
+  books[count] = Book.new(
+    isbn: '034534146-5',
     quantity: 2,
     title: 'Star Wars: A New Hope',
     author: 'George Lucas',
     publisher: 'LucasBooks',
-    category: 'Science Fiction',
     deleted: 'false',
     price: 15.00,
     summary: 'Luke Skywalker was a twenty-year-old who lived and worked on his
     uncle\'s farm on the remote planet of Tatooine... and he was bored beyond
     belief. He yearned for adventures that would take him beyond the farthest
-    galaxies. But he got much more than he bargained for...'
-  ).save!
+    galaxies. But he got much more than he bargained for...')
 
-  Book.new(
-    isbn: '0439136369',
+  count+=1
+  books[count] = Book.new(
+    isbn: '043913636-9',
     quantity: 2,
     title: 'Harry Potter and the Prisoner of Azkaban',
     author: 'J.K. Rowling',
-    category: 'Fiction & Literature',
     publisher: 'Scholastic',
     deleted: 'false',
     price: 15.75,
@@ -166,16 +173,15 @@ au.add_role(a)
     age. But even with his broom, his map, his magic, and
     his loyal friends, Harry isn\'t safe. Because on top
     of everything else, there\'s a traitor hidden at
-    Hogwarts...'
-  ).save!
+    Hogwarts...')
 
-  Book.new(
-    isbn: '0439139600',
+  count+=1
+  books[count] = Book.new(
+    isbn: '043913960-0',
     quantity: 2,
     title: 'Harry Potter and the Goblet of Fire',
     author: 'J.K. Rowling',
     publisher: 'Scholastic',
-    category: 'Fiction & Literature',
     deleted: 'false',
     price: 15.75,
     summary: 'In Harry
@@ -203,16 +209,15 @@ au.add_role(a)
     necessary for his rejuvenation... and he has a faithful
     servant at Hogwarts waiting only for a sign. No,
     nothing is ever normal for Harry Potter. And in his
-    case, different can be deadly.'
-  ).save!
+    case, different can be deadly.')
 
-  Book.new(
-    isbn: '0439358078',
+  count+=1
+  books[count] = Book.new(
+    isbn: '043935807-8',
     quantity: 2,
     title: 'Harry Potter and the Order of the Phoenix',
     author: 'J.K. Rowling',
     publisher: 'Scholastic',
-    category: 'Fiction & Literature',
     deleted: 'false',
     price: 15.75,
     summary: 'In
@@ -241,16 +246,15 @@ au.add_role(a)
     can\'t dispel the gathering darkness. Soon Harry will
     discover the true depth and strength of his friends;
     their boundless loyalty and unbearable sacrifices. His
-    fate depends on them all.'
-  ).save!
+    fate depends on them all.')
 
-  Book.new(
-    isbn: '0439064872',
+  count+=1
+  books[count] = Book.new(
+    isbn: '043906487-2',
     quantity: 2,
     title: 'Harry Potter and the Chamber of Secrets',
     author: 'J.K. Rowling',
     publisher: 'Scholastic',
-    category: 'Fiction & Literature',
     deleted: 'false',
     price: 15.75,
     summary: 'In Harry Potter and the Chamber of Secrets, the summer after
@@ -277,16 +281,15 @@ au.add_role(a)
     Harry\'s most poisonous rival? Could it be Hagrid whose
     mysterious past is finally told? Or could it be the one
     person everyone at Hogwarts most suspects: Harry
-    Potter himself?'
-  ).save!
+    Potter himself?')
 
-  Book.new(
-    isbn: '0439785960',
+  count+=1
+  books[count] = Book.new(
+    isbn: '043978596-0',
     quantity: 2,
     title: 'Harry Potter and the Half-Blood Prince',
     author: 'J.K. Rowling',
     publisher: 'Scholastic',
-    category: 'Fiction & Literature',
     deleted: 'false',
     price: 15.75,
     summary: 'When Harry Potter and the Half-Blood Prince opens, the war against
@@ -316,16 +319,15 @@ au.add_role(a)
     Dumbledore hold the key to the Dark Lord\'s
     weaknesses... until a shocking reversal exposes
     Dumbledore\'s own vulnerabilities, and casts
-    Harry\'s—and Hogwarts\'s—future in shadow.'
-  ).save!
+    Harry\'s—and Hogwarts\'s—future in shadow.')
 
-  Book.new(
-    isbn: '0440414806',
+  count+=1
+  books[count] = Book.new(
+    isbn: '044041480-6',
     quantity: 2,
     title: 'Holes',
     author: 'Louis Sachar',
     publisher: 'Yearling',
-    category: 'Fiction & Literature',
     deleted: 'false',
     price: 5.75,
     summary: 'Stanley Yelnats is under a curse. A curse that began with his
@@ -340,16 +342,15 @@ au.add_role(a)
     warden is looking for something. But what could be buried under
     a dried-up lake? Stanley tries to dig up the truth in this
     inventive and darkly humorous tale of crime and punishment—
-    and redemption.'
-  ).save!
+    and redemption.')
 
-  Book.new(
-    isbn: '0545128285',
+  count+=1
+  books[count] = Book.new(
+    isbn: '054512828-5',
     quantity: 2,
     title: 'The Tales of Beedle the Bard',
     author: 'J.K. Rowling',
     publisher: 'Pottermore',
-    category: 'Fiction & Literature',
     deleted: 'false',
     price: 15.75,
     summary: 'THE TALES OF BEEDLE THE BARD, a Wizarding classic, first came to
@@ -363,16 +364,15 @@ au.add_role(a)
     Rabbitty and Her Cackling Stump," and of course, "The Tale of the
     Three Brothers." But not only are they the equal of fairy tales we
     now know and love, reading them gives new insight into the world of
-    Harry Potter.'
-  ).save!
+    Harry Potter.')
 
-  Book.new(
-    isbn: '0547928203',
+  count+=1
+  books[count] = Book.new(
+    isbn: '054792820-3',
     quantity: 2,
     title: 'Lord of the Rings - The Two Towers',
     author: 'J.R.R. Tolkien',
     publisher: 'Mariner Books',
-    category: 'Fiction & Literature',
     deleted: 'false',
     price: 12.25,
     summary: 'Frodo and his Companions of the Ring have been beset by danger
@@ -383,31 +383,29 @@ au.add_role(a)
     made their escape, the rest of the company was attacked by Orcs. Now
     they continue the journey alone down the great River Anduin -- alone,
     that is, save for the mysterious creeping figure that follows wherever
-    they go.'
-  ).save!
+    they go.')
 
-  Book.new(
-    isbn: '0547928211',
+  count+=1
+  books[count] = Book.new(
+    isbn: '054792821-1',
     quantity: 2,
     title: 'Lord of the Rings - Fellowship of the Ring',
     author: 'J.R.R. Tolkien',
     publisher: 'Recorded Books',
-    category: 'Fiction & Literature',
     deleted: 'false',
     price: 12.25,
     summary: 'Frodo Baggins and his companion Sam Gamgee, set off along thesame
     road down which Bilbo the Hobbit had accompanied Thorin Oakenshield and
     his dwarves all those years ago. Much danger and many strange encounters
-    await them.'
-  ).save!
+    await them.')
 
-  Book.new(
-    isbn: '0618640150',
+  count+=1
+  books[count] = Book.new(
+    isbn: '061864015-0',
     quantity: 2,
     title: 'The Lord of the Rings',
     author: 'J.R.R. Tolkien',
     publisher: 'Houghton Mifflin',
-    category: 'Fiction & Literature',
     deleted: 'false',
     price: 12.25,
     summary: 'One Ring to rule them all, One Ring to find them, One Ring to bring
@@ -428,16 +426,15 @@ au.add_role(a)
     the Fellowship of the Ring: Gandalf the Wizard; the hobbits
     Merry, Pippin, and Sam; Gimli the Dwarf; Legolas the Elf;
     Boromir of Gondor; and a tall, mysterious stranger called
-    Strider.'
-  ).save!
+    Strider.')
 
-  Book.new(
-    isbn: '0684835339',
+  count+=1
+  books[count] = Book.new(
+    isbn: '068483533-9',
     quantity: 2,
     title: 'Great Books',
     author: 'David Denby',
     publisher: 'Simon & Schuster',
-    category: 'Fiction & Literature',
     deleted: 'false',
     price: 12.25,
     summary: 'At the age of forty-eight, writer and film critic David Denby
@@ -449,6 +446,30 @@ au.add_role(a)
     Locke and Nietzsche. Conrad and Woolf. The resulting personal odyssey
     is an engaging blend of self-discovery, cultural commentary,
     reporting, criticism, and autobiography -- an inspiration for anyone
-    in love with the written word.'
-  ).save!
+    in love with the written word.')
 end
+
+for i in 0..62
+  books[i].category= categories[0]
+  books[i].save
+end
+
+for i in 63..125
+  books[i].category= categories[1]
+  books[i].save
+end
+
+for i in 126..188
+  books[i].category= categories[2]
+  books[i].save
+end
+
+for i in 189..251
+  books[i].category= categories[3]
+  books[i].save
+end
+
+# for i in 252..
+#   books[i].category= categories[4]
+#   books[i].save
+# end

@@ -1,6 +1,6 @@
-<% @categories.each do |label, books| %>
+<% @categories.each do |category, books| %>
 	<div class="slider">
 		<%= render partial: "slider_section",
-		 locals: {label: label, books: books} %>
+		 locals: {category: category, books: books} %>
 	</div>
 <% end %>

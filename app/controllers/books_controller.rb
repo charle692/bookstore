@@ -11,10 +11,10 @@ class BooksController < ApplicationController
 
 		books.first(100).each do |book|
 			unless @categories.key? book.category
-				@categories[book.category] = []
+				@categories[book.category.name] = []
 			end
 
-			@categories[book.category].append(book)
+			@categories[book.category.name].append(book)
 		end
 	end
 

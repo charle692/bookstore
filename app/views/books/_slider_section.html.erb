@@ -1,13 +1,12 @@
-<h3 class="category"><%= link_to "#{label}", search_path(search: label) %></h3>
+<h3 class="category"><%= link_to "#{category}", search_path(search: category) %></h3>
 
 <div class="owl-carousel">
-  
+
   <% books.each do |book| %>
 
       <%= link_to image_tag("#{book.isbn}.jpg", alt: "#{book.title} Cover",
         class: "book_cover"), book_path(book) %>
 
-  <% end #ends books.each %>
+  <% end %>
 
 </div>
-
