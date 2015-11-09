@@ -59,13 +59,21 @@ class BooksController < ApplicationController
 	end
 
 	def search
-		@books = Book.basic_search({
-			 title: params[:search],
-			 category: params[:search],
-			 author: params[:search],
-			 isbn: params[:search]},  false)
+		@books = Book.joins(:category).basic_search(
+		 categories: { name: params[:search] })
 
+		(@books << Book.basic_search({
+			 title: params[:search],
+			 author: params[:search],
+			 isbn: params[:search]},  false)).flatten!
+
+		@books.each do |book|
+			puts book.title
+		end
+
+		# Causing the array to get erased
 		@books = @books.paginate(page: params[:page])
+		puts @books.length
 	end
 
 	def checkout

@@ -18,7 +18,7 @@ au.save
 au.add_role(a)
 
 # Categories
-categories[0] = Category.new(name: 'Fiction &   Literature')
+categories[0] = Category.new(name: 'Fiction & Literature')
 categories[1] = Category.new(name: 'History')
 categories[2] = Category.new(name: 'Reference and Language')
 categories[3] = Category.new(name: 'Science Fiction')
